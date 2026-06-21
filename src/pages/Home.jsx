@@ -222,6 +222,7 @@ function Home() {
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
                 src={pricingPhoto}
                 alt="Emprendedora gestionando su tienda online"
+                loading="eager"
                 className="w-full rounded-2xl object-cover h-56 sm:h-72 lg:h-full lg:max-h-[420px]"
               />
             </motion.div>
@@ -229,7 +230,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Herramientas + Testimonios — fondo blanco */}
+      {/* Herramientas + Testimonios */}
       <section className="px-5 lg:px-12 bg-white">
         <div className="max-w-6xl mx-auto">
 
@@ -274,13 +275,17 @@ function Home() {
             ))}
           </div>
 
-          {/* Testimonios */}
-          <div id="testimonios" className="mb-8 lg:mb-10 scroll-mt-20">
-            <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">Testimonios</p>
-            <h2 className="text-2xl font-extrabold tracking-tight mb-8">Emprendedores que ya están escalando</h2>
-          </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mb-16 lg:mb-24">
+      {/* Testimonios — fondo oscuro */}
+      <section className="px-5 lg:px-12 py-12 lg:py-16 bg-[#1C1A17]">
+        <div className="max-w-6xl mx-auto">
+          <div id="testimonios" className="mb-8 lg:mb-10 scroll-mt-20">
+            <p className="text-[10px] font-semibold tracking-widest text-[#E8642A] uppercase mb-2">Testimonios</p>
+            <h2 className="text-2xl font-extrabold tracking-tight text-white mb-8">Emprendedores que ya están escalando</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
             {testimonials.map((t, i) => (
               <motion.div
                 key={i}
@@ -288,36 +293,36 @@ function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-gray-50 border border-gray-200 rounded-2xl p-5 lg:p-6"
-                whileHover={{ y: -4, boxShadow: '0 12px 32px rgba(0,0,0,0.1)' }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                className="bg-white/5 border border-white/10 rounded-2xl p-5 lg:p-6 hover:bg-white/10 transition-colors"
+                whileHover={{ y: -4 }}
               >
                 <div className="flex items-center gap-3 mb-3">
                   <img
                     src={t.photo}
                     alt={t.name}
+                    loading="lazy"
                     className="w-9 h-9 min-w-9 rounded-full object-cover"
                   />
                   <div>
-                    <div className="text-sm font-bold">{t.name}</div>
-                    <div className="text-[11px] text-gray-500">{t.role}</div>
+                    <div className="text-sm font-bold text-white">{t.name}</div>
+                    <div className="text-[11px] text-gray-400">{t.role}</div>
                   </div>
                 </div>
-                <p className="text-xs text-gray-600 leading-relaxed">"{t.text}"</p>
+                <div className="text-[#E8642A] text-lg mb-1">★★★★★</div>
+                <p className="text-xs text-gray-300 leading-relaxed">"{t.text}"</p>
               </motion.div>
             ))}
           </div>
-
         </div>
       </section>
 
-      {/* Cómo funciona */}
-      <section className="px-5 lg:px-12 py-12 lg:py-16 bg-gray-50 border-t border-gray-100">
+      {/* Cómo funciona — fondo oscuro con patrón */}
+      <section className="px-5 lg:px-12 py-12 lg:py-16 bg-[#111009]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">Simple y rápido</p>
-            <h2 className="text-2xl font-extrabold tracking-tight">Cómo funciona</h2>
-            <p className="text-sm text-gray-500 mt-2">Sin curva de aprendizaje. En menos de 60 segundos tienes tu resultado.</p>
+            <p className="text-[10px] font-semibold tracking-widest text-[#E8642A] uppercase mb-2">Simple y rápido</p>
+            <h2 className="text-2xl font-extrabold tracking-tight text-white">Cómo funciona</h2>
+            <p className="text-sm text-gray-400 mt-2">Sin curva de aprendizaje. En menos de 60 segundos tienes tu resultado.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-10">
             {[
@@ -331,14 +336,14 @@ function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="flex flex-col items-center text-center"
+                className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-2xl p-6"
               >
-                <div className="w-12 h-12 rounded-2xl bg-[#FBE9E0] border border-[#f0c5ab] flex items-center justify-center text-2xl mb-4">
+                <div className="w-12 h-12 rounded-2xl bg-[#E8642A]/15 border border-[#E8642A]/30 flex items-center justify-center text-2xl mb-4">
                   {item.icon}
                 </div>
                 <span className="text-[10px] font-bold tracking-widest text-[#E8642A] mb-1">{item.step}</span>
-                <h3 className="text-sm font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+                <h3 className="text-sm font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-xs text-gray-400 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -425,6 +430,7 @@ function Home() {
               <img
                 src={heroPhoto}
                 alt="Resultados de tu tienda online"
+                loading="lazy"
                 className="w-full rounded-2xl object-cover h-full shadow-xl"
               />
             </motion.div>
