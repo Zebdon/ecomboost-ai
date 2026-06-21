@@ -73,16 +73,24 @@ const testimonials = [
   },
 ]
 
-function FaqItem({ question, answer }) {
+function FaqItem({ question, answer, bg, border, accent }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className="px-5 py-4 cursor-pointer select-none hover:bg-white/60 transition-colors" onClick={() => setOpen(!open)}>
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-30px' }}
+      transition={{ duration: 0.4 }}
+      className={`${bg} border ${border} rounded-2xl px-5 py-4 cursor-pointer select-none transition-shadow hover:shadow-md`}
+      onClick={() => setOpen(!open)}
+    >
       <div className="flex justify-between items-center gap-4">
-        <span className="text-sm font-semibold text-gray-900">{question}</span>
+        <span className="text-sm font-semibold text-gray-900 leading-snug">{question}</span>
         <motion.span
           animate={{ rotate: open ? 45 : 0 }}
           transition={{ duration: 0.2 }}
-          className="text-[#E8642A] text-lg font-bold shrink-0 inline-block"
+          style={{ color: accent }}
+          className="text-xl font-bold shrink-0 inline-block w-6 text-center"
         >+</motion.span>
       </div>
       <AnimatePresence initial={false}>
@@ -94,11 +102,11 @@ function FaqItem({ question, answer }) {
             transition={{ duration: 0.25, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <p className="text-sm text-gray-500 leading-relaxed mt-3 pr-8">{answer}</p>
+            <p className="text-sm text-gray-600 leading-relaxed mt-3 pr-6">{answer}</p>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   )
 }
 
@@ -203,7 +211,7 @@ function Home() {
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
                 src={pricingPhoto}
                 alt="Emprendedora gestionando su tienda online"
-                className="w-full rounded-2xl object-cover h-48 lg:h-full lg:max-h-[420px]"
+                className="w-full rounded-2xl object-cover h-56 sm:h-72 lg:h-full lg:max-h-[420px]"
               />
             </motion.div>
           </div>
@@ -219,7 +227,7 @@ function Home() {
             <h2 className="text-2xl font-extrabold tracking-tight mb-8">Todo lo que necesitas para dominar</h2>
           </div>
 
-          <div className="flex flex-col lg:grid lg:grid-cols-3 gap-5 lg:gap-6 mb-16 lg:mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mb-16 lg:mb-24">
             {tools.map((tool, i) => (
               <motion.div
                 key={i}
@@ -261,7 +269,7 @@ function Home() {
             <h2 className="text-2xl font-extrabold tracking-tight mb-8">Emprendedores que ya están escalando</h2>
           </div>
 
-          <div className="flex flex-col lg:grid lg:grid-cols-3 gap-5 lg:gap-6 mb-16 lg:mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mb-16 lg:mb-24">
             {testimonials.map((t, i) => (
               <motion.div
                 key={i}
@@ -419,45 +427,21 @@ function Home() {
 
       {/* FAQ */}
       <section id="faq" className="px-5 lg:px-12 py-12 lg:py-16 bg-white">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">FAQ</p>
-          <h2 className="text-2xl font-extrabold tracking-tight mb-6">Preguntas frecuentes</h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.5 }}
-            className="bg-gray-50 border border-gray-100 rounded-2xl overflow-hidden divide-y divide-gray-100"
-          >
+          <h2 className="text-2xl font-extrabold tracking-tight mb-8">Preguntas frecuentes</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              {
-                q: '¿Necesito experiencia técnica para usarlo?',
-                a: 'No. Solo describes tu producto o nicho en un campo de texto y la IA genera el resultado en segundos. No hay configuración ni conocimientos previos necesarios.',
-              },
-              {
-                q: '¿Los resultados son únicos o genéricos?',
-                a: 'Cada generación es única y personalizada para tu producto. El modelo analiza la descripción que introduces y crea contenido específico, no plantillas copiadas.',
-              },
-              {
-                q: '¿Qué pasa si no me convence?',
-                a: 'Tienes 30 días de garantía total. Si no ves valor en las herramientas, te devolvemos el dinero sin preguntas.',
-              },
-              {
-                q: '¿Para qué tipo de tienda funciona?',
-                a: 'Para cualquier eCommerce: dropshipping, marca propia, infoproductos, servicios digitales. Si vendes algo online, EcomBoost AI te ayuda a hacerlo mejor.',
-              },
-              {
-                q: '¿Cuántas veces puedo usar las herramientas?',
-                a: 'Usos ilimitados. No hay créditos ni límites mensuales. Paga una vez y úsalo siempre.',
-              },
-              {
-                q: '¿Qué incluye exactamente el pago único de $29?',
-                a: 'Acceso completo a las 5 herramientas (Ads, SEO, Nicho, Branding y Plan de Lanzamiento), actualizaciones del modelo de IA y soporte prioritario. Sin suscripción mensual.',
-              },
+              { q: '¿Necesito experiencia técnica para usarlo?', a: 'No. Solo describes tu producto en un campo de texto y la IA genera el resultado en segundos. Sin configuración ni conocimientos previos.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]', accent: '#E8642A' },
+              { q: '¿Los resultados son únicos o genéricos?', a: 'Cada generación es única y personalizada. El modelo analiza tu descripción y crea contenido específico para tu producto, no plantillas copiadas.', bg: 'bg-[#E9F1FA]', border: 'border-[#c2dbf0]', accent: '#2f7fc4' },
+              { q: '¿Qué pasa si no me convence?', a: 'Tienes 30 días de garantía total. Si no ves valor en las herramientas, te devolvemos el dinero sin preguntas.', bg: 'bg-[#EAF5EC]', border: 'border-[#c2e2c9]', accent: '#3f9c58' },
+              { q: '¿Para qué tipo de tienda funciona?', a: 'Para cualquier eCommerce: dropshipping, marca propia, infoproductos o servicios digitales. Si vendes algo online, EcomBoost AI te ayuda a hacerlo mejor.', bg: 'bg-[#F0EBFA]', border: 'border-[#d9cdf0]', accent: '#7e4fd1' },
+              { q: '¿Cuántas veces puedo usar las herramientas?', a: 'Usos ilimitados. No hay créditos ni límites mensuales. Paga una vez y úsalo siempre, con todas las actualizaciones incluidas.', bg: 'bg-[#FBF1DF]', border: 'border-[#f0dba8]', accent: '#d4970f' },
+              { q: '¿Qué incluye el pago único de $29?', a: 'Acceso completo a las 5 herramientas (Ads, SEO, Nicho, Branding y Plan de Lanzamiento), actualizaciones del modelo de IA y soporte prioritario. Sin suscripción mensual.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]', accent: '#9c3c14' },
             ].map((item, i) => (
-              <FaqItem key={i} question={item.q} answer={item.a} />
+              <FaqItem key={i} question={item.q} answer={item.a} bg={item.bg} border={item.border} accent={item.accent} />
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
