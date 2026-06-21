@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Navbar from '../components/layout/Navbar'
