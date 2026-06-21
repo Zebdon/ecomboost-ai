@@ -76,14 +76,28 @@ const testimonials = [
 function FaqItem({ question, answer }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className="py-4 cursor-pointer" onClick={() => setOpen(!open)}>
+    <div className="py-4 cursor-pointer select-none" onClick={() => setOpen(!open)}>
       <div className="flex justify-between items-center gap-4">
         <span className="text-sm font-semibold text-gray-900">{question}</span>
-        <span className={`text-[#E8642A] text-lg font-bold shrink-0 transition-transform duration-200 ${open ? 'rotate-45' : ''}`}>+</span>
+        <motion.span
+          animate={{ rotate: open ? 45 : 0 }}
+          transition={{ duration: 0.2 }}
+          className="text-[#E8642A] text-lg font-bold shrink-0 inline-block"
+        >+</motion.span>
       </div>
-      {open && (
-        <p className="text-sm text-gray-500 leading-relaxed mt-3 pr-8">{answer}</p>
-      )}
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+            <p className="text-sm text-gray-500 leading-relaxed mt-3 pr-8">{answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
@@ -123,22 +137,38 @@ function Home() {
       >
         <div className="max-w-6xl mx-auto">
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-block text-[10px] font-semibold tracking-widest text-[#9c3c14] bg-[#FBE9E0] border border-[#E8642A]/25 px-3 py-1 rounded-full mb-5 uppercase">
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0 }}
+                className="inline-block text-[10px] font-semibold tracking-widest text-[#9c3c14] bg-[#FBE9E0] border border-[#E8642A]/25 px-3 py-1 rounded-full mb-5 uppercase"
+              >
                 Poder de IA para eCommerce
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tighter mb-3">
+              </motion.div>
+              <motion.h1
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.1 }}
+                className="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tighter mb-3"
+              >
                 Escala tu tienda con{' '}
                 <em className="not-italic text-[#E8642A]">Inteligencia Artificial</em>
-              </h1>
-              <p className="text-sm lg:text-lg text-gray-600 leading-relaxed mb-7">
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.2 }}
+                className="text-sm lg:text-lg text-gray-600 leading-relaxed mb-7"
+              >
                 5 herramientas de alta velocidad para validar tu idea, crear tus ads y lanzar tu tienda en minutos.
-              </p>
-              <div className="flex gap-3 flex-wrap mb-4">
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.3 }}
+                className="flex gap-3 flex-wrap mb-4"
+              >
                 <button
                   onClick={() => setWaitlistOpen(true)}
                   className="bg-[#E8642A] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-105 active:scale-95"
@@ -151,11 +181,16 @@ function Home() {
                 >
                   Ver Demo
                 </button>
-              </div>
-              <p className="text-xs text-gray-500 mb-10 lg:mb-0">
+              </motion.div>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.45 }}
+                className="text-xs text-gray-500 mb-10 lg:mb-0"
+              >
                 🔒 Pago único · Sin suscripción · Acceso de por vida
-              </p>
-            </motion.div>
+              </motion.p>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -163,7 +198,9 @@ function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mb-10 lg:mb-0"
             >
-              <img
+              <motion.img
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
                 src={pricingPhoto}
                 alt="Emprendedora gestionando su tienda online"
                 className="w-full rounded-2xl object-cover h-48 lg:h-full lg:max-h-[420px]"
@@ -232,7 +269,9 @@ function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-gray-50 border border-gray-200 rounded-2xl p-5 lg:p-6 transition-all duration-300 hover:shadow-lg"
+                className="bg-gray-50 border border-gray-200 rounded-2xl p-5 lg:p-6"
+                whileHover={{ y: -4, boxShadow: '0 12px 32px rgba(0,0,0,0.1)' }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
                 <div className="flex items-center gap-3 mb-3">
                   <img
@@ -300,8 +339,14 @@ function Home() {
                   <span>Plazas disponibles</span>
                   <span className="text-[#E8642A]">87 de 100</span>
                 </div>
-                <div className="w-full bg-gray-100 rounded-full h-2">
-                  <div className="bg-[#E8642A] h-2 rounded-full" style={{ width: '13%' }}></div>
+                <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
+                  <motion.div
+                    className="bg-[#E8642A] h-2 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '13%' }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.2, ease: 'easeOut', delay: 0.3 }}
+                  />
                 </div>
                 <p className="text-[10px] text-gray-400 mt-1">Solo quedan 13 plazas a este precio</p>
               </div>
@@ -412,10 +457,10 @@ function Home() {
 
       {/* CTA final oscuro */}
       <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-50px' }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0, scale: 0.98 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
         className="bg-[#1C1A17] py-16 lg:py-24 px-5 text-center"
       >
         <h2 className="text-2xl lg:text-4xl font-extrabold text-white tracking-tight mb-3">
