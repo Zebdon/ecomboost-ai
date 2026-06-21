@@ -177,12 +177,14 @@ function Home() {
                 transition={{ duration: 0.45, delay: 0.3 }}
                 className="flex gap-3 flex-wrap mb-4"
               >
-                <button
-                  onClick={() => setWaitlistOpen(true)}
+                <a
+                  href="https://cyntiaze.gumroad.com/l/uwkns"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-[#E8642A] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-105 active:scale-95"
                 >
                   Acceso Anticipado — $29
-                </button>
+                </a>
                 <button
                   onClick={scrollToTools}
                   className="bg-[#2f7fc4] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#256aa6] transition-all hover:scale-105 active:scale-95"
@@ -359,12 +361,14 @@ function Home() {
                 <p className="text-[10px] text-gray-400 mt-1">Solo quedan 13 plazas a este precio</p>
               </div>
 
-              <button
-                onClick={() => setWaitlistOpen(true)}
-                className="w-full bg-[#E8642A] text-white font-bold text-sm py-3.5 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-[1.02] active:scale-95"
+              <a
+                href="https://cyntiaze.gumroad.com/l/uwkns"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[#E8642A] text-white font-bold text-sm py-3.5 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-[1.02] active:scale-95 block text-center"
               >
-                Unirme a la lista de espera
-              </button>
+                Comprar ahora — $29
+              </a>
               <p className="text-[11px] text-gray-500 text-center mt-3">🔒 Sin riesgo · Si no te convence, te devolvemos el dinero</p>
             </motion.div>
 
@@ -459,12 +463,14 @@ function Home() {
         <p className="text-sm lg:text-base text-gray-400 mb-8 max-w-md mx-auto">
           Únete a los emprendedores que ya están usando IA para vender más, sin perder tiempo ni dinero.
         </p>
-        <button
-          onClick={() => setWaitlistOpen(true)}
-          className="bg-[#E8642A] text-white font-bold text-sm px-8 py-4 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-105 active:scale-95"
+        <a
+          href="https://cyntiaze.gumroad.com/l/uwkns"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-[#E8642A] text-white font-bold text-sm px-8 py-4 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-105 active:scale-95"
         >
           Empezar ahora — $29
-        </button>
+        </a>
       </motion.section>
 
       {/* Footer */}
