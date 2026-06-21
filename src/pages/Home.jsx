@@ -178,7 +178,7 @@ function Home() {
                 className="flex gap-3 flex-wrap mb-4"
               >
                 <a
-                  href="https://cyntiaze.gumroad.com/l/uwkns"
+                  href="https://cyntiaze.gumroad.com/l/uapcse"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#E8642A] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-105 active:scale-95"
@@ -362,7 +362,7 @@ function Home() {
               </div>
 
               <a
-                href="https://cyntiaze.gumroad.com/l/uwkns"
+                href="https://cyntiaze.gumroad.com/l/uapcse"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-[#E8642A] text-white font-bold text-sm py-3.5 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-[1.02] active:scale-95 block text-center"
@@ -464,7 +464,7 @@ function Home() {
           Únete a los emprendedores que ya están usando IA para vender más, sin perder tiempo ni dinero.
         </p>
         <a
-          href="https://cyntiaze.gumroad.com/l/uwkns"
+          href="https://cyntiaze.gumroad.com/l/uapcse"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-[#E8642A] text-white font-bold text-sm px-8 py-4 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-105 active:scale-95"
