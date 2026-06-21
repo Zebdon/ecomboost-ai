@@ -76,7 +76,7 @@ const testimonials = [
 function FaqItem({ question, answer }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className="py-4 cursor-pointer select-none" onClick={() => setOpen(!open)}>
+    <div className="px-5 py-4 cursor-pointer select-none hover:bg-white/60 transition-colors" onClick={() => setOpen(!open)}>
       <div className="flex justify-between items-center gap-4">
         <span className="text-sm font-semibold text-gray-900">{question}</span>
         <motion.span
@@ -418,11 +418,17 @@ function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="px-5 lg:px-12 py-16 lg:py-24 bg-white">
+      <section id="faq" className="px-5 lg:px-12 py-12 lg:py-16 bg-white">
         <div className="max-w-3xl mx-auto">
           <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">FAQ</p>
-          <h2 className="text-2xl font-extrabold tracking-tight mb-10">Preguntas frecuentes</h2>
-          <div className="flex flex-col divide-y divide-gray-100">
+          <h2 className="text-2xl font-extrabold tracking-tight mb-6">Preguntas frecuentes</h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.5 }}
+            className="bg-gray-50 border border-gray-100 rounded-2xl overflow-hidden divide-y divide-gray-100"
+          >
             {[
               {
                 q: '¿Necesito experiencia técnica para usarlo?',
@@ -451,7 +457,7 @@ function Home() {
             ].map((item, i) => (
               <FaqItem key={i} question={item.q} answer={item.a} />
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
