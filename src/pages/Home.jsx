@@ -412,7 +412,7 @@ function Home() {
                 𝕏 Twitter
               </a>
               <a
-                href="https://discord.gg/cyntia08446"
+                href="https://discord.gg/6xxCantnK"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 bg-[#7e4fd1] text-white rounded-xl p-3 text-center text-xs font-semibold transition-all hover:scale-[1.03] hover:shadow-md"
