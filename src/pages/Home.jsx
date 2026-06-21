@@ -149,7 +149,7 @@ function Home() {
               className="mb-10 lg:mb-0"
             >
               <img
-                src={heroPhoto}
+                src={pricingPhoto}
                 alt="Emprendedora gestionando su tienda online"
                 className="w-full rounded-2xl object-cover h-48 lg:h-full lg:max-h-[420px]"
               />
@@ -290,7 +290,7 @@ function Home() {
               className="hidden lg:block lg:col-span-3"
             >
               <img
-                src={pricingPhoto}
+                src={heroPhoto}
                 alt="Resultados de tu tienda online"
                 className="w-full rounded-2xl object-cover h-full max-h-[420px] shadow-xl"
               />
