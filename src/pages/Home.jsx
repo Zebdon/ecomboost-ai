@@ -132,6 +132,15 @@ function Home() {
 
   return (
     <div className="bg-white min-h-screen text-black">
+      {/* Barra de anuncio */}
+      <a
+        href="https://cyntiaze.gumroad.com/l/uapcse"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block bg-[#E8642A] text-white text-center text-xs font-semibold py-2 px-4 hover:bg-[#d6551e] transition-colors"
+      >
+        🔥 Early Bird: solo quedan <strong>13 plazas</strong> a $29 — El precio sube a $79 →
+      </a>
       <Navbar />
       <WaitlistModal open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
 
@@ -299,6 +308,40 @@ function Home() {
             ))}
           </div>
 
+        </div>
+      </section>
+
+      {/* Cómo funciona */}
+      <section className="px-5 lg:px-12 py-12 lg:py-16 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">Simple y rápido</p>
+            <h2 className="text-2xl font-extrabold tracking-tight">Cómo funciona</h2>
+            <p className="text-sm text-gray-500 mt-2">Sin curva de aprendizaje. En menos de 60 segundos tienes tu resultado.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-10">
+            {[
+              { step: '01', icon: '✍️', title: 'Describe tu producto o nicho', desc: 'Escribe en lenguaje natural lo que vendes o quieres analizar. No necesitas conocimientos técnicos.' },
+              { step: '02', icon: '⚡', title: 'La IA genera el resultado', desc: 'Nuestro modelo analiza tu descripción y crea contenido único optimizado para conversión en segundos.' },
+              { step: '03', icon: '🚀', title: 'Copia y usa directamente', desc: 'El resultado está listo para pegar en Shopify, Meta Ads, TikTok o donde lo necesites. Sin editar.' },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className="flex flex-col items-center text-center"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-[#FBE9E0] border border-[#f0c5ab] flex items-center justify-center text-2xl mb-4">
+                  {item.icon}
+                </div>
+                <span className="text-[10px] font-bold tracking-widest text-[#E8642A] mb-1">{item.step}</span>
+                <h3 className="text-sm font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
