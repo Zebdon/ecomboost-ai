@@ -404,7 +404,7 @@ function Home() {
             </p>
             <div className="flex gap-3">
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/cantandoparaiso"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 bg-[#2f7fc4] text-white rounded-xl p-3 text-center text-xs font-semibold transition-all hover:scale-[1.03] hover:shadow-md"
@@ -412,7 +412,7 @@ function Home() {
                 𝕏 Twitter
               </a>
               <a
-                href="https://discord.com"
+                href="https://discord.gg/cyntia08446"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 bg-[#7e4fd1] text-white rounded-xl p-3 text-center text-xs font-semibold transition-all hover:scale-[1.03] hover:shadow-md"
