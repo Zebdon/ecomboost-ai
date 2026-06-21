@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Navbar from '../components/layout/Navbar'
+import WaitlistModal from '../components/WaitlistModal'
 import heroPhoto from '../assets/hero-photo-new.jpg'
 import pricingPhoto from '../assets/hero-photo.jpg'
 import testimonial1 from '../assets/testimonial-1.jpg'
@@ -74,6 +75,7 @@ const testimonials = [
 
 function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false)
+  const [waitlistOpen, setWaitlistOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,6 +96,7 @@ function Home() {
   return (
     <div className="bg-white min-h-screen text-black">
       <Navbar />
+      <WaitlistModal open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
 
       {/* Hero — fondo de puntos solo en esta sección */}
       <section
@@ -121,12 +124,12 @@ function Home() {
                 5 herramientas de alta velocidad para validar tu idea, crear tus ads y lanzar tu tienda en minutos.
               </p>
               <div className="flex gap-3 flex-wrap mb-4">
-                <Link
-                  to="/dashboard"
+                <button
+                  onClick={() => setWaitlistOpen(true)}
                   className="bg-[#E8642A] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-105 active:scale-95"
                 >
                   Acceso Anticipado — $29
-                </Link>
+                </button>
                 <button
                   onClick={scrollToTools}
                   className="bg-[#2f7fc4] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#256aa6] transition-all hover:scale-105 active:scale-95"
@@ -270,7 +273,10 @@ function Home() {
                   </li>
                 ))}
               </ul>
-              <button className="w-full bg-[#E8642A] text-white font-bold text-sm py-3.5 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-[1.02] active:scale-95">
+              <button
+                onClick={() => setWaitlistOpen(true)}
+                className="w-full bg-[#E8642A] text-white font-bold text-sm py-3.5 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-[1.02] active:scale-95"
+              >
                 Unirme a la lista de espera
               </button>
               <p className="text-[11px] text-gray-600 text-center mt-3">Solo 100 plazas disponibles a este precio</p>
@@ -347,12 +353,12 @@ function Home() {
         <p className="text-sm lg:text-base text-gray-400 mb-8 max-w-md mx-auto">
           Únete a los emprendedores que ya están usando IA para vender más, sin perder tiempo ni dinero.
         </p>
-        <Link
-          to="/dashboard"
-          className="inline-block bg-[#E8642A] text-white font-bold text-sm px-8 py-4 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-105 active:scale-95"
+        <button
+          onClick={() => setWaitlistOpen(true)}
+          className="bg-[#E8642A] text-white font-bold text-sm px-8 py-4 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-105 active:scale-95"
         >
           Empezar ahora — $29
-        </Link>
+        </button>
       </motion.section>
 
       {/* Footer */}
