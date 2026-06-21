@@ -301,9 +301,9 @@ function Home() {
       </section>
 
       {/* Precio */}
-      <section id="precio" className="bg-[#FBE9E0] py-10 lg:py-14 px-5 lg:px-12 scroll-mt-20">
+      <section id="precio" className="bg-[#FBE9E0] pt-6 pb-6 lg:pt-8 lg:pb-8 px-5 lg:px-12 scroll-mt-20">
         <div className="max-w-4xl mx-auto">
-          <div className="mb-6 text-center lg:text-left">
+          <div className="mb-4 text-center lg:text-left">
             <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">Precio</p>
             <h2 className="text-2xl lg:text-3xl font-extrabold tracking-tight">Valida tu idea hoy mismo.</h2>
           </div>
