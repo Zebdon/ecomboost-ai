@@ -301,14 +301,14 @@ function Home() {
       </section>
 
       {/* Precio */}
-      <section id="precio" className="bg-[#FBE9E0] py-16 lg:py-24 px-5 lg:px-12 scroll-mt-20">
+      <section id="precio" className="bg-[#FBE9E0] py-10 lg:py-14 px-5 lg:px-12 scroll-mt-20">
         <div className="max-w-4xl mx-auto">
-          <div className="mb-8 lg:mb-10 text-center lg:text-left">
+          <div className="mb-6 text-center lg:text-left">
             <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">Precio</p>
             <h2 className="text-2xl lg:text-3xl font-extrabold tracking-tight">Valida tu idea hoy mismo.</h2>
           </div>
 
-          <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-stretch">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -373,12 +373,12 @@ function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="hidden lg:block"
+              className="hidden lg:flex"
             >
               <img
                 src={heroPhoto}
                 alt="Resultados de tu tienda online"
-                className="w-full rounded-2xl object-cover h-full max-h-[420px] shadow-xl"
+                className="w-full rounded-2xl object-cover h-full shadow-xl"
               />
             </motion.div>
           </div>
