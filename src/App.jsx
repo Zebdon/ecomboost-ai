@@ -7,6 +7,8 @@ import NicheAnalyzer from './pages/NicheAnalyzer'
 import Branding from './pages/Branding'
 import LaunchPlan from './pages/LaunchPlan'
 import NotFound from './pages/NotFound'
+import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <Route path="/nicho" element={<NicheAnalyzer />} />
       <Route path="/branding" element={<Branding />} />
       <Route path="/lanzamiento" element={<LaunchPlan />} />
+      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/terms" element={<Terms />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

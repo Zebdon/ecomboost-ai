@@ -483,8 +483,8 @@ function Home() {
             <a href="#herramientas" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Features</a>
             <a href="#precio" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Pricing</a>
             <a href="#faq" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">FAQ</a>
-            <a href="#" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Privacy</a>
-            <a href="#" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Terms</a>
+            <Link to="/privacy" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Privacy</Link>
+            <Link to="/terms" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Terms</Link>
           </div>
         </div>
         <p className="text-[10px] text-gray-400 text-center">© {new Date().getFullYear()} EcomBoost AI. All Rights Reserved.</p>
