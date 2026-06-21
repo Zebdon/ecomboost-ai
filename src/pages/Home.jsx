@@ -73,6 +73,21 @@ const testimonials = [
   },
 ]
 
+function FaqItem({ question, answer }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="py-4 cursor-pointer" onClick={() => setOpen(!open)}>
+      <div className="flex justify-between items-center gap-4">
+        <span className="text-sm font-semibold text-gray-900">{question}</span>
+        <span className={`text-[#E8642A] text-lg font-bold shrink-0 transition-transform duration-200 ${open ? 'rotate-45' : ''}`}>+</span>
+      </div>
+      {open && (
+        <p className="text-sm text-gray-500 leading-relaxed mt-3 pr-8">{answer}</p>
+      )}
+    </div>
+  )
+}
+
 function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [waitlistOpen, setWaitlistOpen] = useState(false)
@@ -255,11 +270,16 @@ function Home() {
               className="lg:col-span-2 bg-white rounded-2xl p-6 lg:p-8 relative overflow-hidden transition-all duration-300 hover:shadow-2xl shadow-[0_20px_50px_rgba(232,100,42,0.25)]"
             >
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#E8642A]"></div>
-              <span className="inline-block bg-[#E8642A] text-white text-[10px] font-bold px-3 py-1 rounded-full mb-4">
-                ⚡ Early Bird Plan
-              </span>
+              <div className="flex gap-2 flex-wrap mb-4">
+                <span className="inline-block bg-[#E8642A] text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                  ⚡ Early Bird Plan
+                </span>
+                <span className="inline-block bg-green-50 text-green-700 border border-green-200 text-[10px] font-bold px-3 py-1 rounded-full">
+                  🛡️ 30 días de garantía
+                </span>
+              </div>
               <div className="text-5xl font-extrabold tracking-tighter mb-1">$29</div>
-              <p className="text-xs text-gray-600 mb-5">Pago único · <span className="text-[#E8642A] font-semibold">Precio sube pronto</span></p>
+              <p className="text-xs text-gray-600 mb-5">Pago único · <span className="text-[#E8642A] font-semibold">Precio sube a $79 en el lanzamiento</span></p>
               <ul className="flex flex-col gap-2 mb-6">
                 {[
                   'Acceso completo a las 5 herramientas IA',
@@ -273,13 +293,26 @@ function Home() {
                   </li>
                 ))}
               </ul>
+
+              {/* Barra de plazas */}
+              <div className="mb-5">
+                <div className="flex justify-between text-[10px] font-semibold text-gray-500 mb-1.5">
+                  <span>Plazas disponibles</span>
+                  <span className="text-[#E8642A]">87 de 100</span>
+                </div>
+                <div className="w-full bg-gray-100 rounded-full h-2">
+                  <div className="bg-[#E8642A] h-2 rounded-full" style={{ width: '13%' }}></div>
+                </div>
+                <p className="text-[10px] text-gray-400 mt-1">Solo quedan 13 plazas a este precio</p>
+              </div>
+
               <button
                 onClick={() => setWaitlistOpen(true)}
                 className="w-full bg-[#E8642A] text-white font-bold text-sm py-3.5 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-[1.02] active:scale-95"
               >
                 Unirme a la lista de espera
               </button>
-              <p className="text-[11px] text-gray-600 text-center mt-3">Solo 100 plazas disponibles a este precio</p>
+              <p className="text-[11px] text-gray-500 text-center mt-3">🔒 Sin riesgo · Si no te convence, te devolvemos el dinero</p>
             </motion.div>
 
             <motion.div
@@ -339,6 +372,44 @@ function Home() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="px-5 lg:px-12 py-16 lg:py-24 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">FAQ</p>
+          <h2 className="text-2xl font-extrabold tracking-tight mb-10">Preguntas frecuentes</h2>
+          <div className="flex flex-col divide-y divide-gray-100">
+            {[
+              {
+                q: '¿Necesito experiencia técnica para usarlo?',
+                a: 'No. Solo describes tu producto o nicho en un campo de texto y la IA genera el resultado en segundos. No hay configuración ni conocimientos previos necesarios.',
+              },
+              {
+                q: '¿Los resultados son únicos o genéricos?',
+                a: 'Cada generación es única y personalizada para tu producto. El modelo analiza la descripción que introduces y crea contenido específico, no plantillas copiadas.',
+              },
+              {
+                q: '¿Qué pasa si no me convence?',
+                a: 'Tienes 30 días de garantía total. Si no ves valor en las herramientas, te devolvemos el dinero sin preguntas.',
+              },
+              {
+                q: '¿Para qué tipo de tienda funciona?',
+                a: 'Para cualquier eCommerce: dropshipping, marca propia, infoproductos, servicios digitales. Si vendes algo online, EcomBoost AI te ayuda a hacerlo mejor.',
+              },
+              {
+                q: '¿Cuántas veces puedo usar las herramientas?',
+                a: 'Usos ilimitados. No hay créditos ni límites mensuales. Paga una vez y úsalo siempre.',
+              },
+              {
+                q: '¿Qué incluye exactamente el pago único de $29?',
+                a: 'Acceso completo a las 5 herramientas (Ads, SEO, Nicho, Branding y Plan de Lanzamiento), actualizaciones del modelo de IA y soporte prioritario. Sin suscripción mensual.',
+              },
+            ].map((item, i) => (
+              <FaqItem key={i} question={item.q} answer={item.a} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA final oscuro */}
       <motion.section
         initial={{ opacity: 0, y: 30 }}
@@ -370,6 +441,7 @@ function Home() {
           <div className="flex gap-4">
             <a href="#herramientas" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Features</a>
             <a href="#precio" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Pricing</a>
+            <a href="#faq" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">FAQ</a>
             <a href="#" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Privacy</a>
             <a href="#" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Terms</a>
           </div>

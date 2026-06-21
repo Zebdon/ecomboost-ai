@@ -34,6 +34,13 @@ function LaunchPlan() {
 
           <div className="bg-[#FBF1DF] border border-[#f0dba8] rounded-2xl p-5 mb-6">
             <label className="block text-xs font-bold text-gray-700 mb-2">Describe tu negocio</label>
+            <div className="flex gap-2 flex-wrap mb-2">
+              {['Tienda de ropa deportiva femenina', 'eCommerce de productos naturales', 'Dropshipping de gadgets tecnológicos'].map((ex) => (
+                <button key={ex} onClick={() => setBusiness(ex)} className="text-[10px] bg-white border border-[#f0dba8] text-[#9c6d0e] px-2.5 py-1 rounded-full hover:bg-[#FBF1DF] transition-colors">
+                  {ex.length > 30 ? ex.slice(0, 30) + '…' : ex}
+                </button>
+              ))}
+            </div>
             <textarea
               value={business}
               onChange={(e) => setBusiness(e.target.value)}

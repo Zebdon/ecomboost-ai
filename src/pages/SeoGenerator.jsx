@@ -35,6 +35,13 @@ function SeoGenerator() {
 
           <div className="bg-[#E9F1FA] border border-[#c2dbf0] rounded-2xl p-5 mb-6">
             <label className="block text-xs font-bold text-gray-700 mb-2">Describe tu producto</label>
+            <div className="flex gap-2 flex-wrap mb-2">
+              {['Mochila impermeable para portátil 25L USB', 'Crema antienvejecimiento con retinol', 'Silla ergonómica para home office'].map((ex) => (
+                <button key={ex} onClick={() => setProduct(ex)} className="text-[10px] bg-white border border-[#c2dbf0] text-[#1e5f96] px-2.5 py-1 rounded-full hover:bg-[#E9F1FA] transition-colors">
+                  {ex.length > 30 ? ex.slice(0, 30) + '…' : ex}
+                </button>
+              ))}
+            </div>
             <textarea
               value={product}
               onChange={(e) => setProduct(e.target.value)}

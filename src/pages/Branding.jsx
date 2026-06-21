@@ -40,6 +40,13 @@ Responde solo con el contenido numerado, sin introducción ni texto adicional.`
 
           <div className="bg-[#F0EBFA] border border-[#d9cdf0] rounded-2xl p-5 mb-6">
             <label className="block text-xs font-bold text-gray-700 mb-2">Describe tu negocio</label>
+            <div className="flex gap-2 flex-wrap mb-2">
+              {['Tienda de velas aromáticas artesanales', 'Cosméticos naturales sin químicos', 'Accesorios minimalistas para hombre'].map((ex) => (
+                <button key={ex} onClick={() => setDescription(ex)} className="text-[10px] bg-white border border-[#d9cdf0] text-[#6938b5] px-2.5 py-1 rounded-full hover:bg-[#F0EBFA] transition-colors">
+                  {ex.length > 30 ? ex.slice(0, 30) + '…' : ex}
+                </button>
+              ))}
+            </div>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}

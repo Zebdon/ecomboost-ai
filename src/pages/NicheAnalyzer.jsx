@@ -42,6 +42,13 @@ Sé directo y realista, no optimista por defecto. Responde solo con el análisis
 
           <div className="bg-[#EAF5EC] border border-[#c2e2c9] rounded-2xl p-5 mb-6">
             <label className="block text-xs font-bold text-gray-700 mb-2">Describe tu nicho o producto</label>
+            <div className="flex gap-2 flex-wrap mb-2">
+              {['Accesorios de yoga sostenibles', 'Ropa deportiva para mujeres', 'Suplementos veganos para deportistas'].map((ex) => (
+                <button key={ex} onClick={() => setNiche(ex)} className="text-[10px] bg-white border border-[#c2e2c9] text-[#2d7a42] px-2.5 py-1 rounded-full hover:bg-[#EAF5EC] transition-colors">
+                  {ex}
+                </button>
+              ))}
+            </div>
             <textarea
               value={niche}
               onChange={(e) => setNiche(e.target.value)}
