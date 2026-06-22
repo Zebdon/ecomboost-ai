@@ -235,7 +235,7 @@ function Home() {
                 transition={{ duration: 0.45, delay: 0.2 }}
                 className="text-sm lg:text-lg text-gray-600 leading-relaxed mb-7"
               >
-                10 herramientas de IA para crear anuncios, emails, copy de ventas, branding y estrategia de marketing — todo en un solo lugar.
+                13 herramientas de IA para crear anuncios, emails, copy de ventas, guiones de YouTube, Reels, branding y estrategia de marketing — todo en un solo lugar.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 14 }}
@@ -406,7 +406,7 @@ function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="mb-4 text-center lg:text-left">
             <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">Precio</p>
-            <h2 className="text-2xl lg:text-3xl font-extrabold tracking-tight">Acceso completo a las 10 herramientas.</h2>
+            <h2 className="text-2xl lg:text-3xl font-extrabold tracking-tight">Acceso completo a las 13 herramientas.</h2>
           </div>
 
           <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-stretch">
@@ -431,7 +431,7 @@ function Home() {
               <ul className="flex flex-col gap-2 mb-6">
                 {[
                   'Acceso web instantáneo — usas las herramientas en tu navegador',
-                  'Las 10 herramientas IA desbloqueadas desde el primer día',
+                  'Las 13 herramientas IA desbloqueadas desde el primer día',
                   'Actualizaciones semanales de modelos',
                   'Soporte prioritario 24/7',
                   'Usos ilimitados para siempre',
@@ -471,7 +471,7 @@ function Home() {
               <div className="mt-3 bg-gray-50 border border-gray-100 rounded-xl px-4 py-3">
                 <p className="text-[11px] text-gray-600 leading-relaxed text-center">
                   <span className="font-semibold text-gray-800">¿Cómo funciona el acceso?</span><br />
-                  Pagas en Gumroad → recibes un email con el link → entras a la app y usas las 10 herramientas desde tu navegador.
+                  Pagas en Gumroad → recibes un email con el link → entras a la app y usas las 13 herramientas desde tu navegador.
                 </p>
               </div>
               <p className="text-[11px] text-gray-500 text-center mt-2">🔒 Sin riesgo · Si no te convence, te devolvemos el dinero</p>
@@ -545,7 +545,7 @@ function Home() {
               { q: '¿Los resultados son únicos o genéricos?', a: 'Cada generación es única y personalizada a tu descripción. El modelo crea contenido específico para tu negocio, no plantillas copiadas.', bg: 'bg-[#EAF5EC]', border: 'border-[#c2e2c9]', accent: '#3f9c58' },
               { q: '¿Qué pasa si no me convence?', a: 'Tienes 30 días de garantía total. Si no ves valor en las herramientas, te devolvemos el dinero sin preguntas.', bg: 'bg-[#F0EBFA]', border: 'border-[#d9cdf0]', accent: '#7e4fd1' },
               { q: '¿Cuántas veces puedo usar las herramientas?', a: 'Usos ilimitados. No hay créditos ni límites mensuales. Paga una vez y úsalo siempre, con todas las actualizaciones incluidas.', bg: 'bg-[#FBF1DF]', border: 'border-[#f0dba8]', accent: '#d4970f' },
-              { q: '¿Qué incluye el pago único de €47?', a: 'Acceso completo a las 10 herramientas IA (Ads, SEO, Mercado, Branding, Lanzamiento, Email, Copy de Ventas, Contenido, Precios y Competencia), actualizaciones del modelo y soporte prioritario.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]', accent: '#9c3c14' },
+              { q: '¿Qué incluye el pago único de €47?', a: 'Acceso completo a las 13 herramientas IA (Ads, SEO, Mercado, Branding, Lanzamiento, Email, Copy de Ventas, Contenido, Precios, Competencia, Guion YouTube, Reels/TikTok y Bio de Redes), actualizaciones del modelo y soporte prioritario.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]', accent: '#9c3c14' },
             ].map((item, i) => (
               <FaqItem key={i} question={item.q} answer={item.a} bg={item.bg} border={item.border} accent={item.accent} />
             ))}
