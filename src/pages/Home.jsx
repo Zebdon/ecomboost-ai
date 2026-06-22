@@ -207,7 +207,7 @@ function Home() {
                 transition={{ duration: 0.4, delay: 0.45 }}
                 className="text-xs text-gray-500 mb-10 lg:mb-0"
               >
-                🔒 Pago único · Sin suscripción · Acceso de por vida
+                🔒 Pago único · Acceso web inmediato · Sin suscripción
               </motion.p>
             </div>
 
@@ -217,12 +217,13 @@ function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mb-10 lg:mb-0"
             >
-              <motion.img
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              <img
                 src={pricingPhoto}
                 alt="Emprendedora gestionando su tienda online"
                 loading="eager"
+                fetchPriority="high"
+                width="600"
+                height="420"
                 className="w-full rounded-2xl object-cover h-56 sm:h-72 lg:h-full lg:max-h-[420px]"
               />
             </motion.div>
@@ -379,7 +380,8 @@ function Home() {
               <p className="text-xs text-gray-600 mb-5">Pago único · <span className="text-[#E8642A] font-semibold">Precio sube a $79 en el lanzamiento</span></p>
               <ul className="flex flex-col gap-2 mb-6">
                 {[
-                  'Acceso completo a las 5 herramientas IA',
+                  'Acceso web instantáneo — usas las herramientas en tu navegador',
+                  'Las 5 herramientas IA desbloqueadas desde el primer día',
                   'Actualizaciones semanales de modelos',
                   'Soporte prioritario 24/7',
                   'Usos ilimitados para siempre',
@@ -417,7 +419,13 @@ function Home() {
               >
                 Comprar ahora — $29
               </a>
-              <p className="text-[11px] text-gray-500 text-center mt-3">🔒 Sin riesgo · Si no te convence, te devolvemos el dinero</p>
+              <div className="mt-3 bg-gray-50 border border-gray-100 rounded-xl px-4 py-3">
+                <p className="text-[11px] text-gray-600 leading-relaxed text-center">
+                  <span className="font-semibold text-gray-800">¿Cómo funciona el acceso?</span><br />
+                  Pagas en Gumroad → recibes un email con el link → entras a la app y usas las 5 herramientas desde tu navegador.
+                </p>
+              </div>
+              <p className="text-[11px] text-gray-500 text-center mt-2">🔒 Sin riesgo · Si no te convence, te devolvemos el dinero</p>
             </motion.div>
 
             <motion.div
