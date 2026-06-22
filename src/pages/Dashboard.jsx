@@ -3,18 +3,22 @@ import { motion } from 'framer-motion'
 import Sidebar from '../components/layout/Sidebar'
 
 const tools = [
-  { path: '/ads', icon: '📣', title: 'Creador de Ads', desc: 'Genera copy publicitario para Instagram, Facebook y TikTok.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]' },
-  { path: '/seo', icon: '🔍', title: 'Generador SEO', desc: 'Descripciones de producto optimizadas para Google.', bg: 'bg-[#E9F1FA]', border: 'border-[#c2dbf0]' },
-  { path: '/nicho', icon: '📊', title: 'Analizador de Nicho', desc: 'Valida si tu producto es rentable antes de invertir.', bg: 'bg-[#EAF5EC]', border: 'border-[#c2e2c9]' },
-  { path: '/branding', icon: '🎨', title: 'Branding Instantáneo', desc: 'Nombres, slogans y paleta de colores para tu marca.', bg: 'bg-[#F0EBFA]', border: 'border-[#d9cdf0]' },
-  { path: '/lanzamiento', icon: '🚀', title: 'Plan de Lanzamiento', desc: 'Tu checklist paso a paso para lanzar tu tienda.', bg: 'bg-[#FBF1DF]', border: 'border-[#f0dba8]' },
+  { path: '/ads', icon: '📣', title: 'Creador de Ads', desc: 'Copy publicitario para Instagram, Facebook y TikTok.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]' },
+  { path: '/seo', icon: '🔍', title: 'Generador SEO', desc: 'Descripciones optimizadas para buscadores.', bg: 'bg-[#E9F1FA]', border: 'border-[#c2dbf0]' },
+  { path: '/nicho', icon: '📊', title: 'Análisis de Mercado', desc: 'Valida tu idea antes de invertir.', bg: 'bg-[#EAF5EC]', border: 'border-[#c2e2c9]' },
+  { path: '/branding', icon: '🎨', title: 'Branding Instantáneo', desc: 'Nombres, slogans y paleta de colores.', bg: 'bg-[#F0EBFA]', border: 'border-[#d9cdf0]' },
+  { path: '/lanzamiento', icon: '🚀', title: 'Plan de Lanzamiento', desc: 'Checklist paso a paso para lanzar.', bg: 'bg-[#FBF1DF]', border: 'border-[#f0dba8]' },
+  { path: '/email', icon: '📧', title: 'Secuencias de Email', desc: 'Automatiza tu email marketing.', bg: 'bg-[#E9F1FA]', border: 'border-[#c2dbf0]' },
+  { path: '/ventas', icon: '📝', title: 'Copy de Ventas', desc: 'Página de ventas que convierte.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]' },
+  { path: '/contenido', icon: '📅', title: 'Calendario de Contenido', desc: '30 días de ideas para redes sociales.', bg: 'bg-[#EAF5EC]', border: 'border-[#c2e2c9]' },
+  { path: '/precios', icon: '💰', title: 'Estrategia de Precios', desc: 'Maximiza conversión con el precio correcto.', bg: 'bg-[#FBF1DF]', border: 'border-[#f0dba8]' },
+  { path: '/competencia', icon: '🔎', title: 'Análisis de Competencia', desc: 'Encuentra huecos que tus rivales no cubren.', bg: 'bg-[#F0EBFA]', border: 'border-[#d9cdf0]' },
 ]
 
 function Dashboard() {
   return (
     <div className="flex flex-col lg:flex-row bg-white min-h-screen">
       <Sidebar />
-
       <main className="flex-1 px-5 lg:px-10 py-8">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -22,9 +26,9 @@ function Dashboard() {
           transition={{ duration: 0.4 }}
         >
           <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">Dashboard</p>
-          <h1 className="text-2xl font-extrabold tracking-tight mb-2">Bienvenido a EcomBoost AI</h1>
+          <h1 className="text-2xl font-extrabold tracking-tight mb-2">Bienvenido a ImpulsoAI</h1>
           <p className="text-sm text-gray-600 mb-8 max-w-xl">
-            Elige una herramienta para empezar a construir tu tienda online con ayuda de inteligencia artificial.
+            10 herramientas de IA para marketing digital, ventas y crecimiento. Elige una para empezar.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -33,7 +37,7 @@ function Dashboard() {
                 key={tool.path}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
               >
                 <Link
                   to={tool.path}

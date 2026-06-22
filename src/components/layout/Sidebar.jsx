@@ -4,9 +4,14 @@ const navItems = [
   { path: '/dashboard', label: 'Resumen', mobileLabel: 'Inicio', icon: '🏠' },
   { path: '/ads', label: 'Creador de Ads', mobileLabel: 'Ads', icon: '📣' },
   { path: '/seo', label: 'Generador SEO', mobileLabel: 'SEO', icon: '🔍' },
-  { path: '/nicho', label: 'Analizador de Nicho', mobileLabel: 'Nicho', icon: '📊' },
-  { path: '/branding', label: 'Branding', mobileLabel: 'Branding', icon: '🎨' },
+  { path: '/nicho', label: 'Análisis de Mercado', mobileLabel: 'Mercado', icon: '📊' },
+  { path: '/branding', label: 'Branding Instantáneo', mobileLabel: 'Branding', icon: '🎨' },
   { path: '/lanzamiento', label: 'Plan de Lanzamiento', mobileLabel: 'Lanzamiento', icon: '🚀' },
+  { path: '/email', label: 'Secuencias de Email', mobileLabel: 'Email', icon: '📧' },
+  { path: '/ventas', label: 'Copy de Ventas', mobileLabel: 'Ventas', icon: '📝' },
+  { path: '/contenido', label: 'Calendario de Contenido', mobileLabel: 'Contenido', icon: '📅' },
+  { path: '/precios', label: 'Estrategia de Precios', mobileLabel: 'Precios', icon: '💰' },
+  { path: '/competencia', label: 'Análisis de Competencia', mobileLabel: 'Competencia', icon: '🔎' },
 ]
 
 function Sidebar() {
@@ -17,7 +22,7 @@ function Sidebar() {
       {/* Logo */}
       <div className="px-5 py-4 lg:py-5 border-b border-white/10">
         <Link to="/" className="text-base font-bold tracking-tight">
-          Ecom<span className="text-[#E8642A]">Boost</span> AI
+          Impulso<span className="text-[#E8642A]">AI</span>
         </Link>
       </div>
 

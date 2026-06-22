@@ -8,6 +8,11 @@ const SeoGenerator = lazy(() => import('./pages/SeoGenerator'))
 const NicheAnalyzer = lazy(() => import('./pages/NicheAnalyzer'))
 const Branding = lazy(() => import('./pages/Branding'))
 const LaunchPlan = lazy(() => import('./pages/LaunchPlan'))
+const EmailSequence = lazy(() => import('./pages/EmailSequence'))
+const SalesPage = lazy(() => import('./pages/SalesPage'))
+const SocialCalendar = lazy(() => import('./pages/SocialCalendar'))
+const PricingStrategy = lazy(() => import('./pages/PricingStrategy'))
+const CompetitorAnalysis = lazy(() => import('./pages/CompetitorAnalysis'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 const Privacy = lazy(() => import('./pages/Privacy'))
 const Terms = lazy(() => import('./pages/Terms'))
@@ -23,6 +28,11 @@ function App() {
         <Route path="/nicho" element={<NicheAnalyzer />} />
         <Route path="/branding" element={<Branding />} />
         <Route path="/lanzamiento" element={<LaunchPlan />} />
+        <Route path="/email" element={<EmailSequence />} />
+        <Route path="/ventas" element={<SalesPage />} />
+        <Route path="/contenido" element={<SocialCalendar />} />
+        <Route path="/precios" element={<PricingStrategy />} />
+        <Route path="/competencia" element={<CompetitorAnalysis />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="*" element={<NotFound />} />

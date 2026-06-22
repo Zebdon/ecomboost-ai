@@ -9,7 +9,7 @@ function Navbar() {
     <nav className="sticky top-0 z-40 bg-[#1C1A17]">
       <div className="flex justify-between items-center px-5 lg:px-12 py-4">
         <div className="text-white font-bold text-base lg:text-lg tracking-tight">
-          Ecom<span className="text-[#E8642A]">Boost</span> AI
+          Impulso<span className="text-[#E8642A]">AI</span>
         </div>
 
         {/* Links desktop */}

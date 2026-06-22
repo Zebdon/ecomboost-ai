@@ -5,7 +5,7 @@ function Privacy() {
     <div className="bg-white min-h-screen text-black">
       <nav className="bg-[#1C1A17] px-5 lg:px-12 py-4 flex justify-between items-center">
         <Link to="/" className="text-white font-bold text-base tracking-tight">
-          Ecom<span className="text-[#E8642A]">Boost</span> AI
+          Impulso<span className="text-[#E8642A]">AI</span>
         </Link>
         <Link to="/" className="text-sm text-gray-300 hover:text-white transition-colors">← Volver</Link>
       </nav>
@@ -18,7 +18,7 @@ function Privacy() {
         <div className="flex flex-col gap-8 text-sm text-gray-700 leading-relaxed">
           <section>
             <h2 className="text-base font-bold text-black mb-2">1. Responsable del tratamiento</h2>
-            <p>EcomBoost AI es responsable del tratamiento de los datos personales que nos facilitas a través de este sitio web. Si tienes alguna duda, puedes contactarnos en <a href="mailto:cyntiazebaze@gmail.com" className="text-[#E8642A] hover:underline">cyntiazebaze@gmail.com</a>.</p>
+            <p>ImpulsoAI es responsable del tratamiento de los datos personales que nos facilitas a través de este sitio web. Si tienes alguna duda, puedes contactarnos en <a href="mailto:cyntiazebaze@gmail.com" className="text-[#E8642A] hover:underline">cyntiazebaze@gmail.com</a>.</p>
           </section>
 
           <section>
@@ -36,7 +36,7 @@ function Privacy() {
             <ul className="list-disc pl-5 flex flex-col gap-1">
               <li>Enviar comunicaciones relacionadas con el lanzamiento del producto (lista de espera).</li>
               <li>Procesar y gestionar tu compra a través de Gumroad.</li>
-              <li>Mejorar la experiencia y funcionalidades de EcomBoost AI.</li>
+              <li>Mejorar la experiencia y funcionalidades de ImpulsoAI.</li>
             </ul>
           </section>
 
