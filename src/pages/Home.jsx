@@ -90,6 +90,30 @@ const tools = [
     tags: [],
     bg: 'bg-[#F0EBFA]', border: 'border-[#d9cdf0]', iconColor: 'text-[#6938b5]', btn: 'bg-[#7e4fd1]',
   },
+  {
+    icon: '▶️',
+    title: 'Guion de YouTube',
+    path: '/youtube',
+    desc: 'Script completo para YouTube con título SEO, gancho de retención y pantalla final optimizada.',
+    tags: ['Retención'],
+    bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]', iconColor: 'text-[#9c3c14]', btn: 'bg-[#E8642A]',
+  },
+  {
+    icon: '🎯',
+    title: 'Script Reels & TikTok',
+    path: '/reels',
+    desc: 'Genera 3 guiones de video corto con gancho viral, desarrollo y caption con hashtags.',
+    tags: ['Viral'],
+    bg: 'bg-[#F0EBFA]', border: 'border-[#d9cdf0]', iconColor: 'text-[#6938b5]', btn: 'bg-[#7e4fd1]',
+  },
+  {
+    icon: '📱',
+    title: 'Bio de Redes Sociales',
+    path: '/bio',
+    desc: '3 versiones de bio optimizada para Instagram, TikTok, LinkedIn o YouTube. Con keywords y CTA.',
+    tags: [],
+    bg: 'bg-[#EAF5EC]', border: 'border-[#c2e2c9]', iconColor: 'text-[#2d7a42]', btn: 'bg-[#3f9c58]',
+  },
 ]
 
 const testimonials = [
@@ -268,7 +292,7 @@ function Home() {
       <section className="px-5 lg:px-12 bg-white">
         <div className="max-w-6xl mx-auto">
           <div id="herramientas" className="mb-8 lg:mb-10 scroll-mt-20 mt-12 lg:mt-20">
-            <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">10 Herramientas</p>
+            <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">13 Herramientas</p>
             <h2 className="text-2xl font-extrabold tracking-tight mb-8">Todo lo que necesitas para crecer online</h2>
           </div>
 
