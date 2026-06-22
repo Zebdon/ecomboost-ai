@@ -13,6 +13,9 @@ const tools = [
   { path: '/contenido', icon: '📅', title: 'Calendario de Contenido', desc: '30 días de ideas para redes sociales.', bg: 'bg-[#EAF5EC]', border: 'border-[#c2e2c9]' },
   { path: '/precios', icon: '💰', title: 'Estrategia de Precios', desc: 'Maximiza conversión con el precio correcto.', bg: 'bg-[#FBF1DF]', border: 'border-[#f0dba8]' },
   { path: '/competencia', icon: '🔎', title: 'Análisis de Competencia', desc: 'Encuentra huecos que tus rivales no cubren.', bg: 'bg-[#F0EBFA]', border: 'border-[#d9cdf0]' },
+  { path: '/youtube', icon: '▶️', title: 'Guion de YouTube', desc: 'Script completo con título SEO, gancho y CTA.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]' },
+  { path: '/reels', icon: '🎯', title: 'Script Reels & TikTok', desc: '3 guiones de video corto con gancho viral.', bg: 'bg-[#F0EBFA]', border: 'border-[#d9cdf0]' },
+  { path: '/bio', icon: '📱', title: 'Bio de Redes Sociales', desc: '3 versiones de bio optimizada para cada red.', bg: 'bg-[#EAF5EC]', border: 'border-[#c2e2c9]' },
 ]
 
 function Dashboard() {
@@ -28,7 +31,7 @@ function Dashboard() {
           <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">Dashboard</p>
           <h1 className="text-2xl font-extrabold tracking-tight mb-2">Bienvenido a ImpulsoAI</h1>
           <p className="text-sm text-gray-600 mb-8 max-w-xl">
-            10 herramientas de IA para marketing digital, ventas y crecimiento. Elige una para empezar.
+            13 herramientas de IA para marketing digital, ventas y crecimiento. Elige una para empezar.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

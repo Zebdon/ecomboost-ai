@@ -13,6 +13,9 @@ const SalesPage = lazy(() => import('./pages/SalesPage'))
 const SocialCalendar = lazy(() => import('./pages/SocialCalendar'))
 const PricingStrategy = lazy(() => import('./pages/PricingStrategy'))
 const CompetitorAnalysis = lazy(() => import('./pages/CompetitorAnalysis'))
+const YouTubeScript = lazy(() => import('./pages/YouTubeScript'))
+const ReelsScript = lazy(() => import('./pages/ReelsScript'))
+const SocialBio = lazy(() => import('./pages/SocialBio'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 const Privacy = lazy(() => import('./pages/Privacy'))
 const Terms = lazy(() => import('./pages/Terms'))
@@ -33,6 +36,9 @@ function App() {
         <Route path="/contenido" element={<SocialCalendar />} />
         <Route path="/precios" element={<PricingStrategy />} />
         <Route path="/competencia" element={<CompetitorAnalysis />} />
+        <Route path="/youtube" element={<YouTubeScript />} />
+        <Route path="/reels" element={<ReelsScript />} />
+        <Route path="/bio" element={<SocialBio />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="*" element={<NotFound />} />

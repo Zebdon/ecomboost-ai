@@ -12,6 +12,9 @@ const navItems = [
   { path: '/contenido', label: 'Calendario de Contenido', mobileLabel: 'Contenido', icon: '📅' },
   { path: '/precios', label: 'Estrategia de Precios', mobileLabel: 'Precios', icon: '💰' },
   { path: '/competencia', label: 'Análisis de Competencia', mobileLabel: 'Competencia', icon: '🔎' },
+  { path: '/youtube', label: 'Guion de YouTube', mobileLabel: 'YouTube', icon: '▶️' },
+  { path: '/reels', label: 'Script Reels & TikTok', mobileLabel: 'Reels', icon: '🎯' },
+  { path: '/bio', label: 'Bio de Redes Sociales', mobileLabel: 'Bio', icon: '📱' },
 ]
 
 function Sidebar() {
