@@ -96,7 +96,7 @@ function WaitlistModal({ open, onClose }) {
                     Únete a la lista de espera
                   </h3>
                   <p className="text-sm text-gray-500 mb-5">
-                    Acceso anticipado a $29 · Precio sube en el lanzamiento oficial.
+                    Acceso anticipado a €29 · Precio sube en el lanzamiento oficial.
                   </p>
 
                   <form onSubmit={handleSubmit} className="flex flex-col gap-3">
@@ -118,7 +118,7 @@ function WaitlistModal({ open, onClose }) {
                       disabled={status === 'loading'}
                       className="w-full bg-[#E8642A] text-white font-bold text-sm py-3 rounded-xl hover:bg-[#d6551e] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {status === 'loading' ? 'Guardando...' : 'Reservar mi plaza — $29'}
+                      {status === 'loading' ? 'Guardando...' : 'Reservar mi plaza — €29'}
                     </button>
                   </form>
 

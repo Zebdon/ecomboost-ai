@@ -28,7 +28,7 @@ function Terms() {
 
           <section>
             <h2 className="text-base font-bold text-black mb-2">3. Acceso y licencia</h2>
-            <p>Al realizar la compra única de $29, adquieres una licencia personal, no exclusiva e intransferible para usar EcomBoost AI de forma ilimitada. No puedes revender, redistribuir ni sublicenciar el acceso.</p>
+            <p>Al realizar la compra única de €29, adquieres una licencia personal, no exclusiva e intransferible para usar EcomBoost AI de forma ilimitada. No puedes revender, redistribuir ni sublicenciar el acceso.</p>
           </section>
 
           <section>

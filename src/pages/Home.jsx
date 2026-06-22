@@ -63,7 +63,7 @@ const testimonials = [
     photo: testimonial2,
     name: 'Javier D.',
     role: 'eCommerce de accesorios',
-    text: 'El analizador de nicho me evitó invertir en un producto que no era rentable. Solo eso ya vale los $29.',
+    text: 'El analizador de nicho me evitó invertir en un producto que no era rentable. Solo eso ya vale los €29.',
   },
   {
     photo: testimonial3,
@@ -139,7 +139,7 @@ function Home() {
         rel="noopener noreferrer"
         className="block bg-[#E8642A] text-white text-center text-xs font-semibold py-2 px-4 hover:bg-[#d6551e] transition-colors"
       >
-        🔥 Early Bird: solo quedan <strong>13 plazas</strong> a $29 — El precio sube a $79 →
+        🔥 Early Bird: solo quedan <strong>13 plazas</strong> a €29 — El precio sube a €79 →
       </a>
       <Navbar />
       <WaitlistModal open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
@@ -192,7 +192,7 @@ function Home() {
                   rel="noopener noreferrer"
                   className="bg-[#E8642A] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-105 active:scale-95"
                 >
-                  Acceso Anticipado — $29
+                  Acceso Anticipado — €29
                 </a>
                 <button
                   onClick={scrollToTools}
@@ -376,8 +376,8 @@ function Home() {
                   🛡️ 30 días de garantía
                 </span>
               </div>
-              <div className="text-5xl font-extrabold tracking-tighter mb-1">$29</div>
-              <p className="text-xs text-gray-600 mb-5">Pago único · <span className="text-[#E8642A] font-semibold">Precio sube a $79 en el lanzamiento</span></p>
+              <div className="text-5xl font-extrabold tracking-tighter mb-1">€29</div>
+              <p className="text-xs text-gray-600 mb-5">Pago único · <span className="text-[#E8642A] font-semibold">Precio sube a €79 en el lanzamiento</span></p>
               <ul className="flex flex-col gap-2 mb-6">
                 {[
                   'Acceso web instantáneo — usas las herramientas en tu navegador',
@@ -417,7 +417,7 @@ function Home() {
                 rel="noopener noreferrer"
                 className="w-full bg-[#E8642A] text-white font-bold text-sm py-3.5 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-[1.02] active:scale-95 block text-center"
               >
-                Comprar ahora — $29
+                Comprar ahora — €29
               </a>
               <div className="mt-3 bg-gray-50 border border-gray-100 rounded-xl px-4 py-3">
                 <p className="text-[11px] text-gray-600 leading-relaxed text-center">
@@ -498,7 +498,7 @@ function Home() {
               { q: '¿Qué pasa si no me convence?', a: 'Tienes 30 días de garantía total. Si no ves valor en las herramientas, te devolvemos el dinero sin preguntas.', bg: 'bg-[#EAF5EC]', border: 'border-[#c2e2c9]', accent: '#3f9c58' },
               { q: '¿Para qué tipo de tienda funciona?', a: 'Para cualquier eCommerce: dropshipping, marca propia, infoproductos o servicios digitales. Si vendes algo online, EcomBoost AI te ayuda a hacerlo mejor.', bg: 'bg-[#F0EBFA]', border: 'border-[#d9cdf0]', accent: '#7e4fd1' },
               { q: '¿Cuántas veces puedo usar las herramientas?', a: 'Usos ilimitados. No hay créditos ni límites mensuales. Paga una vez y úsalo siempre, con todas las actualizaciones incluidas.', bg: 'bg-[#FBF1DF]', border: 'border-[#f0dba8]', accent: '#d4970f' },
-              { q: '¿Qué incluye el pago único de $29?', a: 'Acceso completo a las 5 herramientas (Ads, SEO, Nicho, Branding y Plan de Lanzamiento), actualizaciones del modelo de IA y soporte prioritario. Sin suscripción mensual.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]', accent: '#9c3c14' },
+              { q: '¿Qué incluye el pago único de €29?', a: 'Acceso completo a las 5 herramientas (Ads, SEO, Nicho, Branding y Plan de Lanzamiento), actualizaciones del modelo de IA y soporte prioritario. Sin suscripción mensual.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]', accent: '#9c3c14' },
             ].map((item, i) => (
               <FaqItem key={i} question={item.q} answer={item.a} bg={item.bg} border={item.border} accent={item.accent} />
             ))}
@@ -526,7 +526,7 @@ function Home() {
           rel="noopener noreferrer"
           className="inline-block bg-[#E8642A] text-white font-bold text-sm px-8 py-4 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-105 active:scale-95"
         >
-          Empezar ahora — $29
+          Empezar ahora — €29
         </a>
       </motion.section>
 
