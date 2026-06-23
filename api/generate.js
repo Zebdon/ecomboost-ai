@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Prompt inválido.' })
   }
 
-  if (prompt.length > 2000) {
+  if (prompt.length > 5000) {
     return res.status(400).json({ error: 'El texto es demasiado largo.' })
   }
 

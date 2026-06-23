@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import Home from './pages/Home'
+import ChatBot from './components/ChatBot'
 
 const Dashboard = lazy(() => import('./pages/Dashboard'))
 const AdCreator = lazy(() => import('./pages/AdCreator'))
@@ -23,6 +24,7 @@ const Terms = lazy(() => import('./pages/Terms'))
 function App() {
   return (
     <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <ChatBot />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Navbar from '../components/layout/Navbar'
 import WaitlistModal from '../components/WaitlistModal'
+import StatsBar from '../components/StatsBar'
+import HeroDemo from '../components/HeroDemo'
 import heroPhoto from '../assets/hero-photo-new.jpg'
 import pricingPhoto from '../assets/hero-photo.jpg'
 import testimonial1 from '../assets/testimonial-1.jpg'
@@ -287,6 +289,9 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <StatsBar />
+      <HeroDemo />
 
       {/* Herramientas */}
       <section className="px-5 lg:px-12 bg-white">
