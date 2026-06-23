@@ -509,7 +509,7 @@ function Home() {
             <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">Comunidad</p>
             <h2 className="text-xl font-extrabold tracking-tight mb-3">Build in Public</h2>
             <p className="text-xs text-gray-600 leading-relaxed mb-6">
-              Compartimos nuestro roadmap, mejoras y nuevas herramientas con la comunidad. ImpulsoAI crece junto a sus usuarios — tu feedback impulsa el producto.
+              Compartimos nuestro roadmap, mejoras y nuevas herramientas con la comunidad. ZebcyTec crece junto a sus usuarios — tu feedback impulsa el producto.
             </p>
             <div className="flex gap-3">
               <a
@@ -540,7 +540,7 @@ function Home() {
           <h2 className="text-2xl font-extrabold tracking-tight mb-8">Preguntas frecuentes</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              { q: '¿Para qué tipo de negocio sirve?', a: 'Para cualquier negocio digital: eCommerce, freelancers, creadores de contenido, agencias, consultores o infoproductores. Si tienes presencia online, ImpulsoAI te ayuda a crecer.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]', accent: '#E8642A' },
+              { q: '¿Para qué tipo de negocio sirve?', a: 'Para cualquier negocio digital: eCommerce, freelancers, creadores de contenido, agencias, consultores o infoproductores. Si tienes presencia online, ZebcyTec te ayuda a crecer.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]', accent: '#E8642A' },
               { q: '¿Necesito experiencia técnica?', a: 'No. Solo describes lo que necesitas en un campo de texto y la IA genera el resultado en segundos. Sin configuración ni conocimientos previos.', bg: 'bg-[#E9F1FA]', border: 'border-[#c2dbf0]', accent: '#2f7fc4' },
               { q: '¿Los resultados son únicos o genéricos?', a: 'Cada generación es única y personalizada a tu descripción. El modelo crea contenido específico para tu negocio, no plantillas copiadas.', bg: 'bg-[#EAF5EC]', border: 'border-[#c2e2c9]', accent: '#3f9c58' },
               { q: '¿Qué pasa si no me convence?', a: 'Tienes 30 días de garantía total. Si no ves valor en las herramientas, te devolvemos el dinero sin preguntas.', bg: 'bg-[#F0EBFA]', border: 'border-[#d9cdf0]', accent: '#7e4fd1' },
@@ -581,7 +581,7 @@ function Home() {
       <footer className="px-5 py-6 border-t border-black/10">
         <div className="flex justify-between items-center flex-wrap gap-2 mb-3">
           <div className="text-sm font-bold">
-            Impulso<span className="text-[#E8642A]">AI</span>
+            Zebcy<span className="text-[#E8642A]">Tec</span>
           </div>
           <div className="flex gap-4">
             <a href="#herramientas" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Herramientas</a>
@@ -591,7 +591,7 @@ function Home() {
             <Link to="/terms" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Terms</Link>
           </div>
         </div>
-        <p className="text-[10px] text-gray-400 text-center">© {new Date().getFullYear()} ImpulsoAI. All Rights Reserved.</p>
+        <p className="text-[10px] text-gray-400 text-center">© {new Date().getFullYear()} ZebcyTec. All Rights Reserved.</p>
       </footer>
 
       {showScrollTop && (

@@ -25,7 +25,7 @@ function Sidebar() {
       {/* Logo */}
       <div className="px-5 py-4 lg:py-5 border-b border-white/10">
         <Link to="/" className="text-base font-bold tracking-tight">
-          Impulso<span className="text-[#E8642A]">AI</span>
+          Zebcy<span className="text-[#E8642A]">Tec</span>
         </Link>
       </div>
 

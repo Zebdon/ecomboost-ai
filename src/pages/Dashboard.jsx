@@ -29,7 +29,7 @@ function Dashboard() {
           transition={{ duration: 0.4 }}
         >
           <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">Dashboard</p>
-          <h1 className="text-2xl font-extrabold tracking-tight mb-2">Bienvenido a ImpulsoAI</h1>
+          <h1 className="text-2xl font-extrabold tracking-tight mb-2">Bienvenido a ZebcyTec</h1>
           <p className="text-sm text-gray-600 mb-8 max-w-xl">
             13 herramientas de IA para marketing digital, ventas y crecimiento. Elige una para empezar.
           </p>

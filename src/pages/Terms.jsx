@@ -5,7 +5,7 @@ function Terms() {
     <div className="bg-white min-h-screen text-black">
       <nav className="bg-[#1C1A17] px-5 lg:px-12 py-4 flex justify-between items-center">
         <Link to="/" className="text-white font-bold text-base tracking-tight">
-          Impulso<span className="text-[#E8642A]">AI</span>
+          Zebcy<span className="text-[#E8642A]">Tec</span>
         </Link>
         <Link to="/" className="text-sm text-gray-300 hover:text-white transition-colors">← Volver</Link>
       </nav>
@@ -18,17 +18,17 @@ function Terms() {
         <div className="flex flex-col gap-8 text-sm text-gray-700 leading-relaxed">
           <section>
             <h2 className="text-base font-bold text-black mb-2">1. Aceptación de los términos</h2>
-            <p>Al acceder y usar ImpulsoAI, aceptas estos Términos y Condiciones en su totalidad. Si no estás de acuerdo, por favor no uses el servicio.</p>
+            <p>Al acceder y usar ZebcyTec, aceptas estos Términos y Condiciones en su totalidad. Si no estás de acuerdo, por favor no uses el servicio.</p>
           </section>
 
           <section>
             <h2 className="text-base font-bold text-black mb-2">2. Descripción del servicio</h2>
-            <p>ImpulsoAI es una plataforma de herramientas de inteligencia artificial diseñadas para ayudar a emprendedores y negocios digitales. Las herramientas incluyen: generador de anuncios, SEO, análisis de mercado, branding, plan de lanzamiento, secuencias de email, copy de ventas, calendario de contenido, estrategia de precios y análisis de competencia.</p>
+            <p>ZebcyTec es una plataforma de herramientas de inteligencia artificial diseñadas para ayudar a emprendedores y negocios digitales. Las herramientas incluyen: generador de anuncios, SEO, análisis de mercado, branding, plan de lanzamiento, secuencias de email, copy de ventas, calendario de contenido, estrategia de precios y análisis de competencia.</p>
           </section>
 
           <section>
             <h2 className="text-base font-bold text-black mb-2">3. Acceso y licencia</h2>
-            <p>Al realizar la compra única de €47, adquieres una licencia personal, no exclusiva e intransferible para usar ImpulsoAI de forma ilimitada. No puedes revender, redistribuir ni sublicenciar el acceso.</p>
+            <p>Al realizar la compra única de €47, adquieres una licencia personal, no exclusiva e intransferible para usar ZebcyTec de forma ilimitada. No puedes revender, redistribuir ni sublicenciar el acceso.</p>
           </section>
 
           <section>
@@ -38,7 +38,7 @@ function Terms() {
 
           <section>
             <h2 className="text-base font-bold text-black mb-2">5. Uso aceptable</h2>
-            <p>Te comprometes a usar ImpulsoAI únicamente para fines legales y legítimos. Queda prohibido:</p>
+            <p>Te comprometes a usar ZebcyTec únicamente para fines legales y legítimos. Queda prohibido:</p>
             <ul className="list-disc pl-5 mt-2 flex flex-col gap-1">
               <li>Usar el servicio para generar contenido fraudulento, engañoso o ilegal.</li>
               <li>Intentar acceder a sistemas no autorizados o vulnerar la seguridad del servicio.</li>
@@ -48,12 +48,12 @@ function Terms() {
 
           <section>
             <h2 className="text-base font-bold text-black mb-2">6. Contenido generado por IA</h2>
-            <p>El contenido generado por las herramientas de IA es orientativo. ImpulsoAI no garantiza resultados específicos de ventas, posicionamiento o rentabilidad. El usuario es responsable de revisar y adaptar el contenido generado antes de usarlo.</p>
+            <p>El contenido generado por las herramientas de IA es orientativo. ZebcyTec no garantiza resultados específicos de ventas, posicionamiento o rentabilidad. El usuario es responsable de revisar y adaptar el contenido generado antes de usarlo.</p>
           </section>
 
           <section>
             <h2 className="text-base font-bold text-black mb-2">7. Limitación de responsabilidad</h2>
-            <p>ImpulsoAI no se hace responsable de pérdidas económicas, daños directos o indirectos derivados del uso del servicio. La responsabilidad máxima en cualquier caso estará limitada al importe pagado por el usuario.</p>
+            <p>ZebcyTec no se hace responsable de pérdidas económicas, daños directos o indirectos derivados del uso del servicio. La responsabilidad máxima en cualquier caso estará limitada al importe pagado por el usuario.</p>
           </section>
 
           <section>
