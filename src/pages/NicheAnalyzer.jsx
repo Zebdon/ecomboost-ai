@@ -52,7 +52,7 @@ Sé directo y realista, no optimista por defecto. Responde solo con el análisis
             <textarea
               value={niche}
               onChange={(e) => setNiche(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) handleGenerate() }}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleGenerate() } }}
               placeholder="Ej: Accesorios de yoga sostenibles (esterillas, bloques de corcho)"
               className="w-full bg-white border border-[#c2e2c9] rounded-xl p-3 text-sm text-black placeholder-gray-400 outline-none focus:border-[#3f9c58] resize-none"
               rows={3}

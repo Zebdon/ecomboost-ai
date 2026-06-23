@@ -46,7 +46,7 @@ function AdCreator() {
             <textarea
               value={product}
               onChange={(e) => setProduct(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) handleGenerate() }}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleGenerate() } }}
               placeholder="Ej: Crema facial natural con ácido hialurónico, hidrata 24h, para piel sensible"
               className="w-full bg-white border border-[#f0c5ab] rounded-xl p-3 text-sm text-black placeholder-gray-400 outline-none focus:border-[#E8642A] resize-none"
               rows={3}

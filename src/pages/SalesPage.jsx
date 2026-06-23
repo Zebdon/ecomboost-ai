@@ -53,7 +53,7 @@ Usa lenguaje directo, emocional y orientado a conversión. Responde solo con el 
             <textarea
               value={product}
               onChange={(e) => setProduct(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) handleGenerate() }}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleGenerate() } }}
               placeholder="Ej: Programa online de 8 semanas para aprender a invertir en bolsa desde cero, precio €197"
               className="w-full bg-white border border-[#f0c5ab] rounded-xl p-3 text-sm text-black placeholder-gray-400 outline-none focus:border-[#E8642A] resize-none"
               rows={3}

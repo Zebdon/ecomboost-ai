@@ -44,7 +44,7 @@ function LaunchPlan() {
             <textarea
               value={business}
               onChange={(e) => setBusiness(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) handleGenerate() }}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleGenerate() } }}
               placeholder="Ej: Tienda online de ropa deportiva para mujeres, enfocada en yoga y pilates"
               className="w-full bg-white border border-[#f0dba8] rounded-xl p-3 text-sm text-black placeholder-gray-400 outline-none focus:border-[#d4970f] resize-none"
               rows={3}

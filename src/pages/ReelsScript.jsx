@@ -61,7 +61,7 @@ Los 3 guiones deben tener ángulos diferentes del mismo tema. Escribe en tono di
             <textarea
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) handleGenerate() }}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleGenerate() } }}
               placeholder="Ej: Por qué el 90% de las tiendas online fracasan en los primeros 6 meses"
               className="w-full bg-white border border-[#d9cdf0] rounded-xl p-3 text-sm text-black placeholder-gray-400 outline-none focus:border-[#7e4fd1] resize-none"
               rows={3}

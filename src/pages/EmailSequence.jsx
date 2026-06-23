@@ -48,7 +48,7 @@ Numera cada email claramente (Email 1, Email 2...). Responde solo con los emails
             <textarea
               value={business}
               onChange={(e) => setBusiness(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) handleGenerate() }}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleGenerate() } }}
               placeholder="Ej: Curso online de fotografía para principiantes, precio €97"
               className="w-full bg-white border border-[#c2dbf0] rounded-xl p-3 text-sm text-black placeholder-gray-400 outline-none focus:border-[#2f7fc4] resize-none"
               rows={3}

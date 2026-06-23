@@ -59,7 +59,7 @@ Sé específico con números concretos. Responde solo con el análisis, sin intr
             <textarea
               value={product}
               onChange={(e) => setProduct(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) handleGenerate() }}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleGenerate() } }}
               placeholder="Ej: Servicio mensual de gestión de Instagram para pequeñas empresas, incluye 12 posts y stories"
               className="w-full bg-white border border-[#f0dba8] rounded-xl p-3 text-sm text-black placeholder-gray-400 outline-none focus:border-[#d4970f] resize-none"
               rows={3}

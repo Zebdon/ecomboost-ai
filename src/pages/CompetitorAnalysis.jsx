@@ -62,7 +62,7 @@ Sé específico y directo. Responde solo con el análisis, sin introducción.`
             <textarea
               value={business}
               onChange={(e) => setBusiness(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) handleGenerate() }}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleGenerate() } }}
               placeholder="Ej: Servicio de diseño de logos para emprendedores digitales, precio €150-300"
               className="w-full bg-white border border-[#d9cdf0] rounded-xl p-3 text-sm text-black placeholder-gray-400 outline-none focus:border-[#7e4fd1] resize-none"
               rows={3}

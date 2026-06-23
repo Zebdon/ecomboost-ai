@@ -50,7 +50,7 @@ Responde solo con el contenido numerado, sin introducción ni texto adicional.`
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) handleGenerate() }}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleGenerate() } }}
               placeholder="Ej: Tienda de velas aromáticas artesanales hechas con cera de soja"
               className="w-full bg-white border border-[#d9cdf0] rounded-xl p-3 text-sm text-black placeholder-gray-400 outline-none focus:border-[#7e4fd1] resize-none"
               rows={3}

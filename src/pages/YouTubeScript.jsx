@@ -64,7 +64,7 @@ Escribe el guion en primera persona, tono natural y conversacional. Responde sol
             <textarea
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) handleGenerate() }}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleGenerate() } }}
               placeholder="Ej: Cómo crear una tienda online desde cero sin experiencia en 2025"
               className="w-full bg-white border border-[#f0c5ab] rounded-xl p-3 text-sm text-black placeholder-gray-400 outline-none focus:border-[#E8642A] resize-none"
               rows={3}

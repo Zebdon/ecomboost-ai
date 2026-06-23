@@ -50,7 +50,7 @@ Mezcla contenido educativo, entretenimiento, detrás de cámaras y ventas en pro
             <textarea
               value={business}
               onChange={(e) => setBusiness(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) handleGenerate() }}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleGenerate() } }}
               placeholder="Ej: Estudio de yoga online para mujeres mayores de 30 años"
               className="w-full bg-white border border-[#c2e2c9] rounded-xl p-3 text-sm text-black placeholder-gray-400 outline-none focus:border-[#3f9c58] resize-none"
               rows={3}
