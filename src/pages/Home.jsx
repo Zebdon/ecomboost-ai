@@ -511,22 +511,30 @@ function Home() {
             <p className="text-xs text-gray-600 leading-relaxed mb-6">
               Compartimos nuestro roadmap, mejoras y nuevas herramientas con la comunidad. ZebcyTec crece junto a sus usuarios — tu feedback impulsa el producto.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-wrap">
+              <a
+                href="https://www.instagram.com/cyntiazebaze"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 min-w-[120px] bg-gradient-to-r from-[#f9437a] to-[#e8642a] text-white rounded-xl p-3 text-center text-xs font-semibold transition-all hover:scale-[1.03] hover:shadow-md"
+              >
+                📸 Instagram
+              </a>
+              <a
+                href="https://www.linkedin.com/in/cyntia-zebaze-dondjio-45a679152"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 min-w-[120px] bg-[#0a66c2] text-white rounded-xl p-3 text-center text-xs font-semibold transition-all hover:scale-[1.03] hover:shadow-md"
+              >
+                💼 LinkedIn
+              </a>
               <a
                 href="https://twitter.com/cantandoparaiso"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-[#2f7fc4] text-white rounded-xl p-3 text-center text-xs font-semibold transition-all hover:scale-[1.03] hover:shadow-md"
+                className="flex-1 min-w-[120px] bg-[#2f7fc4] text-white rounded-xl p-3 text-center text-xs font-semibold transition-all hover:scale-[1.03] hover:shadow-md"
               >
                 𝕏 Twitter
-              </a>
-              <a
-                href="https://discord.gg/6xxCantnK"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 bg-[#7e4fd1] text-white rounded-xl p-3 text-center text-xs font-semibold transition-all hover:scale-[1.03] hover:shadow-md"
-              >
-                💬 Discord
               </a>
             </div>
           </motion.div>
@@ -579,17 +587,22 @@ function Home() {
 
       {/* Footer */}
       <footer className="px-5 py-6 border-t border-black/10">
-        <div className="flex justify-between items-center flex-wrap gap-2 mb-3">
+        <div className="flex justify-between items-center flex-wrap gap-3 mb-4">
           <div className="text-sm font-bold">
             Zebcy<span className="text-[#E8642A]">Tec</span>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 flex-wrap">
             <a href="#herramientas" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Herramientas</a>
             <a href="#precio" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Precio</a>
             <a href="#faq" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">FAQ</a>
             <Link to="/privacy" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Privacy</Link>
             <Link to="/terms" className="text-[11px] text-gray-500 hover:text-[#E8642A] transition-colors">Terms</Link>
           </div>
+        </div>
+        <div className="flex gap-3 justify-center mb-4">
+          <a href="https://www.instagram.com/cyntiazebaze" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-sm hover:bg-[#E8642A] hover:text-white transition-all" title="Instagram">📸</a>
+          <a href="https://www.linkedin.com/in/cyntia-zebaze-dondjio-45a679152" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-sm hover:bg-[#0a66c2] hover:text-white transition-all" title="LinkedIn">💼</a>
+          <a href="https://twitter.com/cantandoparaiso" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-sm hover:bg-[#2f7fc4] hover:text-white transition-all" title="Twitter / X">𝕏</a>
         </div>
         <p className="text-[10px] text-gray-400 text-center">© {new Date().getFullYear()} ZebcyTec. All Rights Reserved.</p>
       </footer>
