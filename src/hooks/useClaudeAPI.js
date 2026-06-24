@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { LangContext } from '../contexts/LangContext'
 
 export function useClaudeAPI() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const langCtx = useContext(LangContext)
 
   const generate = async (prompt) => {
     setLoading(true)
     setError(null)
-    const lang = localStorage.getItem('zebcytec_lang') || 'es'
+    const lang = langCtx?.lang || localStorage.getItem('zebcytec_lang') || 'es'
     try {
       const response = await fetch('/api/generate', {
         method: 'POST',

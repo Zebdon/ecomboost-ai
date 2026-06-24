@@ -1,21 +1,17 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLang } from '../../contexts/LangContext'
 
 const LANGS = [
-  { code: 'es', flag: '🇪🇸' },
-  { code: 'en', flag: '🇬🇧' },
-  { code: 'fr', flag: '🇫🇷' },
+  { code: 'es', flag: '🇪🇸', label: 'ES' },
+  { code: 'en', flag: '🇬🇧', label: 'EN' },
+  { code: 'fr', flag: '🇫🇷', label: 'FR' },
 ]
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [lang, setLang] = useState(() => localStorage.getItem('zebcytec_lang') || 'es')
-
-  const changeLang = (code) => {
-    setLang(code)
-    localStorage.setItem('zebcytec_lang', code)
-  }
+  const { lang, changeLang, t } = useLang()
 
   return (
     <nav className="sticky top-0 z-40 bg-[#1C1A17]">
@@ -26,25 +22,23 @@ function Navbar() {
 
         {/* Links desktop */}
         <div className="hidden lg:flex items-center gap-6">
-          <a href="#herramientas" className="text-sm text-gray-300 hover:text-white transition-colors">Herramientas</a>
-          <a href="#precio" className="text-sm text-gray-300 hover:text-white transition-colors">Precio</a>
-          <a href="#faq" className="text-sm text-gray-300 hover:text-white transition-colors">FAQ</a>
-          <a href="#comunidad" className="text-sm text-gray-300 hover:text-white transition-colors">Comunidad</a>
+          <a href="#herramientas" className="text-sm text-gray-300 hover:text-white transition-colors">{t.nav.tools}</a>
+          <a href="#precio" className="text-sm text-gray-300 hover:text-white transition-colors">{t.nav.price}</a>
+          <a href="#faq" className="text-sm text-gray-300 hover:text-white transition-colors">{t.nav.faq}</a>
+          <a href="#comunidad" className="text-sm text-gray-300 hover:text-white transition-colors">{t.nav.community}</a>
 
           {/* Selector de idioma */}
-          <div className="flex items-center gap-1 bg-white/5 rounded-lg p-1">
+          <div className="flex items-center gap-0.5 bg-white/5 rounded-lg p-1">
             {LANGS.map((l) => (
               <button
                 key={l.code}
                 onClick={() => changeLang(l.code)}
-                title={l.code.toUpperCase()}
-                className={`text-sm px-2 py-1 rounded-md transition-colors font-semibold ${
-                  lang === l.code
-                    ? 'bg-[#E8642A] text-white'
-                    : 'text-gray-400 hover:text-white'
+                title={l.label}
+                className={`text-xs px-2.5 py-1.5 rounded-md font-bold transition-colors ${
+                  lang === l.code ? 'bg-[#E8642A] text-white' : 'text-gray-400 hover:text-white'
                 }`}
               >
-                {l.flag}
+                {l.flag} {l.label}
               </button>
             ))}
           </div>
@@ -53,20 +47,19 @@ function Navbar() {
             to="/dashboard"
             className="bg-[#E8642A] text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:bg-[#d6551e] transition-colors"
           >
-            Get Started
+            {t.nav.cta}
           </Link>
         </div>
 
-        {/* Hamburguesa móvil */}
-        <div className="lg:hidden flex items-center gap-3">
-          {/* Selector idioma móvil */}
+        {/* Móvil: idioma + hamburguesa */}
+        <div className="lg:hidden flex items-center gap-2">
           <div className="flex items-center gap-0.5 bg-white/5 rounded-lg p-0.5">
             {LANGS.map((l) => (
               <button
                 key={l.code}
                 onClick={() => changeLang(l.code)}
-                className={`text-xs px-1.5 py-1 rounded-md transition-colors ${
-                  lang === l.code ? 'bg-[#E8642A]' : 'text-gray-400'
+                className={`text-xs px-1.5 py-1 rounded-md font-bold transition-colors ${
+                  lang === l.code ? 'bg-[#E8642A] text-white' : 'text-gray-400'
                 }`}
               >
                 {l.flag}
@@ -76,7 +69,7 @@ function Navbar() {
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="text-white text-2xl w-8 h-8 flex items-center justify-center"
-            aria-label="Abrir menú"
+            aria-label="Menu"
           >
             <motion.span animate={{ rotate: menuOpen ? 90 : 0 }} transition={{ duration: 0.2 }}>
               {menuOpen ? '✕' : '☰'}
@@ -85,7 +78,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Menú móvil animado */}
+      {/* Menú móvil */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -97,10 +90,10 @@ function Navbar() {
           >
             <div className="flex flex-col px-5 pb-5 pt-2 gap-1">
               {[
-                { label: 'Herramientas', href: '#herramientas' },
-                { label: 'Precio', href: '#precio' },
-                { label: 'FAQ', href: '#faq' },
-                { label: 'Comunidad', href: '#comunidad' },
+                { label: t.nav.tools, href: '#herramientas' },
+                { label: t.nav.price, href: '#precio' },
+                { label: t.nav.faq, href: '#faq' },
+                { label: t.nav.community, href: '#comunidad' },
               ].map((item) => (
                 <a
                   key={item.href}
@@ -116,7 +109,7 @@ function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="bg-[#E8642A] text-white text-sm font-bold px-5 py-3 rounded-lg text-center mt-3 hover:bg-[#d6551e] transition-colors"
               >
-                Get Started
+                {t.nav.cta}
               </Link>
             </div>
           </motion.div>

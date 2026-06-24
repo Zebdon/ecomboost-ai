@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Home from './pages/Home'
 import ChatBot from './components/ChatBot'
+import { LangProvider } from './contexts/LangContext'
 
 const Dashboard = lazy(() => import('./pages/Dashboard'))
 const AdCreator = lazy(() => import('./pages/AdCreator'))
@@ -60,12 +61,12 @@ function AnimatedRoutes() {
 
 function App() {
   return (
-    <>
+    <LangProvider>
       <ChatBot />
       <Suspense fallback={<div className="min-h-screen bg-white" />}>
         <AnimatedRoutes />
       </Suspense>
-    </>
+    </LangProvider>
   )
 }
 
