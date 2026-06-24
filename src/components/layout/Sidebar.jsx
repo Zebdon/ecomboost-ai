@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useState } from 'react'
 
 const navItems = [
   { path: '/dashboard', label: 'Resumen', mobileLabel: 'Inicio', icon: '🏠' },
@@ -17,8 +18,20 @@ const navItems = [
   { path: '/bio', label: 'Bio de Redes Sociales', mobileLabel: 'Bio', icon: '📱' },
 ]
 
+const LANGS = [
+  { code: 'es', label: 'ES', flag: '🇪🇸' },
+  { code: 'en', label: 'EN', flag: '🇬🇧' },
+  { code: 'fr', label: 'FR', flag: '🇫🇷' },
+]
+
 function Sidebar() {
   const location = useLocation()
+  const [lang, setLang] = useState(() => localStorage.getItem('zebcytec_lang') || 'es')
+
+  const changeLang = (code) => {
+    setLang(code)
+    localStorage.setItem('zebcytec_lang', code)
+  }
 
   return (
     <aside className="w-full lg:w-64 lg:min-h-screen bg-[#1C1A17] text-white flex flex-col">
@@ -74,8 +87,26 @@ function Sidebar() {
       </nav>
 
       {/* Footer — solo desktop */}
-      <div className="hidden lg:block px-5 py-4 border-t border-white/10">
-        <Link to="/" className="text-xs text-gray-400 hover:text-white transition-colors">
+      <div className="hidden lg:block px-4 py-4 border-t border-white/10 space-y-3">
+        <div>
+          <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-2">Idioma de respuesta</p>
+          <div className="flex gap-1.5">
+            {LANGS.map((l) => (
+              <button
+                key={l.code}
+                onClick={() => changeLang(l.code)}
+                className={`flex-1 text-[11px] font-bold py-1.5 rounded-lg transition-colors ${
+                  lang === l.code
+                    ? 'bg-[#E8642A] text-white'
+                    : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+                }`}
+              >
+                {l.flag} {l.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <Link to="/" className="block text-xs text-gray-400 hover:text-white transition-colors">
           ← Volver al inicio
         </Link>
       </div>

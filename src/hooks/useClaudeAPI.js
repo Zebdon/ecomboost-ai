@@ -7,11 +7,12 @@ export function useClaudeAPI() {
   const generate = async (prompt) => {
     setLoading(true)
     setError(null)
+    const lang = localStorage.getItem('zebcytec_lang') || 'es'
     try {
       const response = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt }),
+        body: JSON.stringify({ prompt, lang }),
       })
 
       const data = await response.json()

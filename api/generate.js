@@ -37,7 +37,7 @@ export default async function handler(req, res) {
     return res.status(429).json({ error: 'Demasiadas peticiones. Espera un minuto e inténtalo de nuevo.' })
   }
 
-  const { prompt } = req.body
+  const { prompt, lang } = req.body
 
   if (!prompt || typeof prompt !== 'string' || prompt.trim().length < 5) {
     return res.status(400).json({ error: 'Prompt inválido.' })
@@ -47,10 +47,18 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'El texto es demasiado largo.' })
   }
 
+  const LANG_MAP = {
+    en: 'IMPORTANT: Write your entire response in English.',
+    fr: 'IMPORTANT: Écris toute ta réponse en français.',
+  }
+  const langInstruction = LANG_MAP[lang] || ''
+
   const isChat = prompt.includes('asistente virtual de ZebcyTec')
   const finalPrompt = isChat
     ? prompt.trim()
-    : prompt.trim() + '\n\n---\nIMPORTANTE: Termina tu respuesta con la sección "**🚀 Pasos accionables para esta semana**" con 4-5 acciones concretas que el usuario puede implementar HOY. Menciona herramientas reales por nombre (Canva, Meta Ads Manager, Google Search Console, Mailchimp, Notion, etc.), da instrucciones paso a paso y métricas para medir el éxito.'
+    : prompt.trim()
+      + '\n\n---\nIMPORTANTE: Termina tu respuesta con la sección "**🚀 Pasos accionables para esta semana**" con 4-5 acciones concretas que el usuario puede implementar HOY. Menciona herramientas reales por nombre (Canva, Meta Ads Manager, Google Search Console, Mailchimp, Notion, etc.), da instrucciones paso a paso y métricas para medir el éxito.'
+      + (langInstruction ? '\n\n' + langInstruction : '')
 
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
