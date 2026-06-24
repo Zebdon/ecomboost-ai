@@ -452,7 +452,7 @@ function Home() {
                 ))}
               </ul>
               <a
-                href="https://cyntiaze.gumroad.com/l/uapcse"
+                href="https://cyntiaze.gumroad.com/l/npbjqy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-gray-900 text-white font-bold text-sm py-3.5 rounded-xl hover:bg-black transition-all hover:scale-[1.02] active:scale-95 block text-center"
