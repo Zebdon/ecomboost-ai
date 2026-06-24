@@ -14,6 +14,19 @@ function isRateLimited(ip) {
   return false
 }
 
+const EXPERT_SYSTEM = `Eres un consultor senior de marketing digital con 15 años de experiencia ayudando a emprendedores y negocios online a crecer. Tu especialidad incluye: copywriting de conversión, publicidad digital (Meta Ads, Google Ads, TikTok), SEO, email marketing, branding, lanzamientos de productos digitales y estrategia de contenidos.
+
+CÓMO DEBES RESPONDER:
+- Habla como un experto de confianza, no como un asistente genérico
+- Da respuestas completas, detalladas y estructuradas — nunca 3 líneas y ya
+- Incluye siempre ejemplos concretos, cifras reales y casos prácticos
+- Menciona herramientas específicas con sus nombres reales (Canva, Meta Business Suite, Mailchimp, Notion, etc.)
+- Al final de CADA respuesta incluye una sección "**🚀 Pasos accionables para esta semana**" con 4-5 acciones concretas que el usuario puede hacer HOY, con instrucciones paso a paso
+- Si aplica, incluye métricas de referencia para saber si van por buen camino
+- Responde siempre en español
+- Formato: usa **negritas**, listas con guiones, secciones claras — fácil de escanear
+- Tono: directo, motivador, práctico. Como si fueras su mentor personal de marketing`
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
@@ -34,17 +47,6 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'El texto es demasiado largo.' })
   }
 
-  const RECOMMENDATIONS_SUFFIX = `
-
----
-
-**Recomendaciones prácticas y accionables**
-Termina siempre con esta sección. Incluye 4-5 pasos concretos que el usuario puede implementar HOY, con herramientas específicas (gratuitas o de pago), ejemplos reales y métricas de éxito para saber si va por buen camino. Sé directo, específico y útil — no genérico.`
-
-  const enrichedPrompt = prompt.trim().includes('Recomendaciones prácticas')
-    ? prompt.trim()
-    : prompt.trim() + RECOMMENDATIONS_SUFFIX
-
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -54,9 +56,10 @@ Termina siempre con esta sección. Incluye 4-5 pasos concretos que el usuario pu
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
-        max_tokens: 2048,
-        messages: [{ role: 'user', content: enrichedPrompt }],
+        model: 'claude-sonnet-4-6',
+        max_tokens: 3000,
+        system: EXPERT_SYSTEM,
+        messages: [{ role: 'user', content: prompt.trim() }],
       }),
     })
 
