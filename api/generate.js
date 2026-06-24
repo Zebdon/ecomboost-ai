@@ -47,6 +47,11 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'El texto es demasiado largo.' })
   }
 
+  const isChat = prompt.includes('asistente virtual de ZebcyTec')
+  const finalPrompt = isChat
+    ? prompt.trim()
+    : prompt.trim() + '\n\n---\nIMPORTANTE: Termina tu respuesta con la sección "**🚀 Pasos accionables para esta semana**" con 4-5 acciones concretas que el usuario puede implementar HOY. Menciona herramientas reales por nombre (Canva, Meta Ads Manager, Google Search Console, Mailchimp, Notion, etc.), da instrucciones paso a paso y métricas para medir el éxito.'
+
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -59,7 +64,7 @@ export default async function handler(req, res) {
         model: 'claude-sonnet-4-6',
         max_tokens: 3000,
         system: EXPERT_SYSTEM,
-        messages: [{ role: 'user', content: prompt.trim() }],
+        messages: [{ role: 'user', content: finalPrompt }],
       }),
     })
 
