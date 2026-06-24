@@ -198,7 +198,7 @@ function Home() {
         rel="noopener noreferrer"
         className="block bg-[#E8642A] text-white text-center text-xs font-semibold py-2 px-4 hover:bg-[#d6551e] transition-colors"
       >
-        🔥 Early Bird: solo quedan <strong>13 plazas</strong> a €47 — El precio sube a €97 →
+        🔥 Acceso completo desde <strong>€27/mes</strong> — o €67 pago único de por vida →
       </a>
       <Navbar />
       <WaitlistModal open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
@@ -251,7 +251,7 @@ function Home() {
                   rel="noopener noreferrer"
                   className="bg-[#E8642A] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-105 active:scale-95"
                 >
-                  Acceso Anticipado — €47
+                  Empezar — desde €27/mes
                 </a>
                 <button
                   onClick={scrollToTools}
@@ -266,7 +266,7 @@ function Home() {
                 transition={{ duration: 0.4, delay: 0.45 }}
                 className="text-xs text-gray-500 mb-10 lg:mb-0"
               >
-                🔒 Pago único · Acceso web inmediato · Sin suscripción
+                🔒 Sin permanencia · Cancela cuando quieras · Acceso web inmediato
               </motion.p>
             </div>
 
@@ -407,39 +407,89 @@ function Home() {
       </section>
 
       {/* Precio */}
-      <section id="precio" className="bg-[#FBE9E0] pt-6 pb-6 lg:pt-8 lg:pb-8 px-5 lg:px-12 scroll-mt-20">
+      <section id="precio" className="bg-[#FBE9E0] pt-10 pb-10 lg:pt-16 lg:pb-16 px-5 lg:px-12 scroll-mt-20">
         <div className="max-w-4xl mx-auto">
-          <div className="mb-4 text-center lg:text-left">
+          <div className="mb-8 text-center">
             <p className="text-[10px] font-semibold tracking-widest text-[#9c3c14] uppercase mb-2">Precio</p>
-            <h2 className="text-2xl lg:text-3xl font-extrabold tracking-tight">Acceso completo a las 13 herramientas.</h2>
+            <h2 className="text-2xl lg:text-3xl font-extrabold tracking-tight">Elige cómo quieres acceder</h2>
+            <p className="text-sm text-gray-600 mt-2">Dos opciones. Sin sorpresas. Sin letra pequeña.</p>
           </div>
 
-          <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
+            {/* Plan Mensual */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-2xl p-6 lg:p-8 relative overflow-hidden transition-all duration-300 hover:shadow-2xl shadow-[0_20px_50px_rgba(232,100,42,0.25)]"
+              className="bg-white rounded-2xl p-6 lg:p-8 relative overflow-hidden transition-all duration-300 hover:shadow-xl"
             >
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#E8642A]"></div>
               <div className="flex gap-2 flex-wrap mb-4">
-                <span className="inline-block bg-[#E8642A] text-white text-[10px] font-bold px-3 py-1 rounded-full">
-                  ⚡ Early Bird Plan
+                <span className="inline-block bg-[#FBE9E0] text-[#9c3c14] border border-[#f0c5ab] text-[10px] font-bold px-3 py-1 rounded-full">
+                  Mensual
                 </span>
                 <span className="inline-block bg-green-50 text-green-700 border border-green-200 text-[10px] font-bold px-3 py-1 rounded-full">
                   🛡️ 30 días de garantía
                 </span>
               </div>
-              <div className="text-5xl font-extrabold tracking-tighter mb-1">€47</div>
-              <p className="text-xs text-gray-600 mb-5">Pago único · <span className="text-[#E8642A] font-semibold">Precio sube a €97 en el lanzamiento</span></p>
+              <div className="flex items-end gap-1 mb-1">
+                <span className="text-5xl font-extrabold tracking-tighter">€27</span>
+                <span className="text-sm text-gray-500 mb-2">/mes</span>
+              </div>
+              <p className="text-xs text-gray-500 mb-5">Cancela cuando quieras · Sin permanencia</p>
               <ul className="flex flex-col gap-2 mb-6">
                 {[
-                  'Acceso web instantáneo — usas las herramientas en tu navegador',
-                  'Las 13 herramientas IA desbloqueadas desde el primer día',
-                  'Actualizaciones semanales de modelos',
-                  'Soporte prioritario 24/7',
+                  'Acceso a las 13 herramientas IA',
+                  'Actualizaciones del modelo incluidas',
+                  'Usos ilimitados cada mes',
+                  'Soporte por email',
+                  'Cancela en cualquier momento',
+                ].map((perk, i) => (
+                  <li key={i} className="flex items-center gap-2 text-sm text-gray-700">
+                    <span className="text-[#E8642A]">✓</span>
+                    {perk}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://cyntiaze.gumroad.com/l/uapcse"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-gray-900 text-white font-bold text-sm py-3.5 rounded-xl hover:bg-black transition-all hover:scale-[1.02] active:scale-95 block text-center"
+              >
+                Empezar — €27/mes
+              </a>
+            </motion.div>
+
+            {/* Plan Vitalicio */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white rounded-2xl p-6 lg:p-8 relative overflow-hidden transition-all duration-300 hover:shadow-2xl shadow-[0_20px_50px_rgba(232,100,42,0.2)] border-2 border-[#E8642A]/30"
+            >
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#E8642A]"></div>
+              <div className="flex gap-2 flex-wrap mb-4">
+                <span className="inline-block bg-[#E8642A] text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                  ⭐ Mejor valor
+                </span>
+                <span className="inline-block bg-green-50 text-green-700 border border-green-200 text-[10px] font-bold px-3 py-1 rounded-full">
+                  🛡️ 30 días de garantía
+                </span>
+              </div>
+              <div className="flex items-end gap-2 mb-1">
+                <span className="text-5xl font-extrabold tracking-tighter">€67</span>
+                <span className="text-xs text-gray-400 line-through mb-2">€97</span>
+              </div>
+              <p className="text-xs text-gray-500 mb-5">Pago único · <span className="text-[#E8642A] font-semibold">Acceso de por vida</span></p>
+              <ul className="flex flex-col gap-2 mb-6">
+                {[
+                  'Las 13 herramientas IA desbloqueadas',
                   'Usos ilimitados para siempre',
+                  'Nuevas herramientas futuras incluidas',
+                  'Soporte prioritario 24/7',
+                  'Equivale a solo 2.5 meses',
                 ].map((perk, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm text-gray-700">
                     <span className="text-[#E8642A]">✓</span>
@@ -450,7 +500,7 @@ function Home() {
 
               <div className="mb-5">
                 <div className="flex justify-between text-[10px] font-semibold text-gray-500 mb-1.5">
-                  <span>Plazas disponibles</span>
+                  <span>Plazas a este precio</span>
                   <span className="text-[#E8642A]">87 de 100</span>
                 </div>
                 <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
@@ -462,7 +512,7 @@ function Home() {
                     transition={{ duration: 1.2, ease: 'easeOut', delay: 0.3 }}
                   />
                 </div>
-                <p className="text-[10px] text-gray-400 mt-1">Solo quedan 13 plazas a este precio</p>
+                <p className="text-[10px] text-gray-400 mt-1">Solo quedan 13 plazas a €67</p>
               </div>
 
               <a
@@ -471,31 +521,17 @@ function Home() {
                 rel="noopener noreferrer"
                 className="w-full bg-[#E8642A] text-white font-bold text-sm py-3.5 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-[1.02] active:scale-95 block text-center"
               >
-                Comprar ahora — €47
+                Comprar ahora — €67
               </a>
-              <div className="mt-3 bg-gray-50 border border-gray-100 rounded-xl px-4 py-3">
-                <p className="text-[11px] text-gray-600 leading-relaxed text-center">
-                  <span className="font-semibold text-gray-800">¿Cómo funciona el acceso?</span><br />
-                  Pagas en Gumroad → recibes un email con el link → entras a la app y usas las 13 herramientas desde tu navegador.
-                </p>
-              </div>
-              <p className="text-[11px] text-gray-500 text-center mt-2">🔒 Sin riesgo · Si no te convence, te devolvemos el dinero</p>
+              <p className="text-[11px] text-gray-500 text-center mt-3">🔒 Sin riesgo · Devolvemos el dinero si no te convence</p>
             </motion.div>
+          </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="hidden lg:flex"
-            >
-              <img
-                src={heroPhoto}
-                alt="Resultados de tu negocio digital"
-                loading="lazy"
-                className="w-full rounded-2xl object-cover h-full shadow-xl"
-              />
-            </motion.div>
+          <div className="mt-5 bg-white/70 rounded-xl px-4 py-3 text-center">
+            <p className="text-[11px] text-gray-600 leading-relaxed">
+              <span className="font-semibold text-gray-800">¿Cómo funciona el acceso?</span><br />
+              Pagas → recibes un email con el link → entras a la app y usas las 13 herramientas desde tu navegador.
+            </p>
           </div>
         </div>
       </section>
@@ -557,8 +593,8 @@ function Home() {
               { q: '¿Necesito experiencia técnica?', a: 'No. Solo describes lo que necesitas en un campo de texto y la IA genera el resultado en segundos. Sin configuración ni conocimientos previos.', bg: 'bg-[#E9F1FA]', border: 'border-[#c2dbf0]', accent: '#2f7fc4' },
               { q: '¿Los resultados son únicos o genéricos?', a: 'Cada generación es única y personalizada a tu descripción. El modelo crea contenido específico para tu negocio, no plantillas copiadas.', bg: 'bg-[#EAF5EC]', border: 'border-[#c2e2c9]', accent: '#3f9c58' },
               { q: '¿Qué pasa si no me convence?', a: 'Tienes 30 días de garantía total. Si no ves valor en las herramientas, te devolvemos el dinero sin preguntas.', bg: 'bg-[#F0EBFA]', border: 'border-[#d9cdf0]', accent: '#7e4fd1' },
-              { q: '¿Cuántas veces puedo usar las herramientas?', a: 'Usos ilimitados. No hay créditos ni límites mensuales. Paga una vez y úsalo siempre, con todas las actualizaciones incluidas.', bg: 'bg-[#FBF1DF]', border: 'border-[#f0dba8]', accent: '#d4970f' },
-              { q: '¿Qué incluye el pago único de €47?', a: 'Acceso completo a las 13 herramientas IA (Ads, SEO, Mercado, Branding, Lanzamiento, Email, Copy de Ventas, Contenido, Precios, Competencia, Guion YouTube, Reels/TikTok y Bio de Redes), actualizaciones del modelo y soporte prioritario.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]', accent: '#9c3c14' },
+              { q: '¿Cuántas veces puedo usar las herramientas?', a: 'Usos ilimitados. No hay créditos ni límites mensuales. En el plan mensual tienes acceso completo mientras mantengas la suscripción. En el plan vitalicio, acceso para siempre.', bg: 'bg-[#FBF1DF]', border: 'border-[#f0dba8]', accent: '#d4970f' },
+              { q: '¿Qué diferencia hay entre los dos planes?', a: 'El plan mensual (€27/mes) es ideal para probar sin compromiso — cancelas cuando quieras. El plan vitalicio (€67 único) es mejor valor: pagas una vez y tienes acceso para siempre, incluidas las herramientas futuras. Equivale a solo 2.5 meses del plan mensual.', bg: 'bg-[#FBE9E0]', border: 'border-[#f0c5ab]', accent: '#9c3c14' },
             ].map((item, i) => (
               <FaqItem key={i} question={item.q} answer={item.a} bg={item.bg} border={item.border} accent={item.accent} />
             ))}
@@ -586,7 +622,7 @@ function Home() {
           rel="noopener noreferrer"
           className="inline-block bg-[#E8642A] text-white font-bold text-sm px-8 py-4 rounded-xl hover:bg-[#d6551e] transition-all hover:scale-105 active:scale-95"
         >
-          Empezar ahora — €47
+          Empezar ahora — desde €27/mes
         </a>
       </motion.section>
 

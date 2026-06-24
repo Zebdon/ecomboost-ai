@@ -34,6 +34,17 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'El texto es demasiado largo.' })
   }
 
+  const RECOMMENDATIONS_SUFFIX = `
+
+---
+
+**Recomendaciones prácticas y accionables**
+Termina siempre con esta sección. Incluye 4-5 pasos concretos que el usuario puede implementar HOY, con herramientas específicas (gratuitas o de pago), ejemplos reales y métricas de éxito para saber si va por buen camino. Sé directo, específico y útil — no genérico.`
+
+  const enrichedPrompt = prompt.trim().includes('Recomendaciones prácticas')
+    ? prompt.trim()
+    : prompt.trim() + RECOMMENDATIONS_SUFFIX
+
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -44,8 +55,8 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
-        max_tokens: 1024,
-        messages: [{ role: 'user', content: prompt.trim() }],
+        max_tokens: 2048,
+        messages: [{ role: 'user', content: enrichedPrompt }],
       }),
     })
 
